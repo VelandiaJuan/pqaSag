@@ -1,1 +1,923 @@
-[]
+[
+    {
+        "id": "45c928fdcc827b94",
+        "type": "tab",
+        "label": "PQA",
+        "disabled": false,
+        "info": ""
+    },
+    {
+        "id": "38940f8.c9c27f",
+        "type": "group",
+        "z": "45c928fdcc827b94",
+        "name": "",
+        "style": {
+            "label": true
+        },
+        "nodes": [
+            "70a63b74.44894c",
+            "ee01b6d1.f76f98",
+            "dc201b4c96bf9cb8",
+            "acb738077324d4f5",
+            "ead83bdf05616014"
+        ],
+        "x": -12,
+        "y": 13,
+        "w": 1464,
+        "h": 694
+    },
+    {
+        "id": "70a63b74.44894c",
+        "type": "group",
+        "z": "45c928fdcc827b94",
+        "g": "38940f8.c9c27f",
+        "name": "Configuración CTs",
+        "style": {
+            "label": true,
+            "color": "#000000"
+        },
+        "nodes": [
+            "5c5b638c.a8f91c",
+            "cf0d5223.b4dab",
+            "7cc997fc.b5d5b8",
+            "83dce8ae2adb063d",
+            "d22f737e1faaee45"
+        ],
+        "x": 54,
+        "y": 519,
+        "w": 412,
+        "h": 162
+    },
+    {
+        "id": "ee01b6d1.f76f98",
+        "type": "group",
+        "z": "45c928fdcc827b94",
+        "g": "38940f8.c9c27f",
+        "name": "Lectura de datos eléctricos PQA",
+        "style": {
+            "label": true,
+            "color": "#000000"
+        },
+        "nodes": [
+            "ed025e5c.648858",
+            "6188debb.009948",
+            "5fe9be31.70c2a",
+            "1f4cd023.43eb4",
+            "a65e22e6.71c65",
+            "993f38ab.482e9",
+            "3f9fcc24.6fac3c",
+            "d1a9dbc4.33f7e",
+            "329a20ae.addd08",
+            "f69145ec.595428",
+            "7bbced0c.e692d4",
+            "8f2ea546.30e13",
+            "8d348d63.134818",
+            "5ff5e28d.2c7d74",
+            "9d6fe8b8.eb7cf8",
+            "f8287ebe.9bb3c8",
+            "eaf2e52.a8fae18",
+            "72ceef76.7f8f1",
+            "139d011a.841abf",
+            "ddee4aa9.906988",
+            "339b7b9a.f4bb14",
+            "894eb396.e8f0c",
+            "23986012.d8fc9",
+            "43ffc14d.a3cac8"
+        ],
+        "x": 14,
+        "y": 39,
+        "w": 1412,
+        "h": 442
+    },
+    {
+        "id": "ae58460d.12c698",
+        "type": "modbus-client",
+        "name": "PQA",
+        "clienttype": "tcp",
+        "bufferCommands": true,
+        "stateLogEnabled": false,
+        "queueLogEnabled": false,
+        "tcpHost": "192.168.2.13",
+        "tcpPort": "502",
+        "tcpType": "DEFAULT",
+        "serialPort": "/dev/ttyUSB",
+        "serialType": "RTU-BUFFERD",
+        "serialBaudrate": "9600",
+        "serialDatabits": "8",
+        "serialStopbits": "1",
+        "serialParity": "none",
+        "serialConnectionDelay": "100",
+        "serialAsciiResponseStartDelimiter": "",
+        "unit_id": "5",
+        "commandDelay": "1",
+        "clientTimeout": "1000",
+        "reconnectOnTimeout": true,
+        "reconnectTimeout": "2000",
+        "parallelUnitIdsAllowed": true
+    },
+    {
+        "id": "5c5b638c.a8f91c",
+        "type": "change",
+        "z": "45c928fdcc827b94",
+        "g": "70a63b74.44894c",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "PQA.CTS.CT1",
+                "pt": "global",
+                "to": "payload",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 330,
+        "y": 560,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "cf0d5223.b4dab",
+        "type": "change",
+        "z": "45c928fdcc827b94",
+        "g": "70a63b74.44894c",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "PQA.CTS.CT2",
+                "pt": "global",
+                "to": "payload",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 330,
+        "y": 600,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "7cc997fc.b5d5b8",
+        "type": "change",
+        "z": "45c928fdcc827b94",
+        "g": "70a63b74.44894c",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "PQA.CTS",
+                "pt": "global",
+                "to": "payload",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 320,
+        "y": 640,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "83dce8ae2adb063d",
+        "type": "inject",
+        "z": "45c928fdcc827b94",
+        "g": "70a63b74.44894c",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": true,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "500",
+        "payloadType": "num",
+        "x": 150,
+        "y": 560,
+        "wires": [
+            [
+                "5c5b638c.a8f91c"
+            ]
+        ]
+    },
+    {
+        "id": "d22f737e1faaee45",
+        "type": "inject",
+        "z": "45c928fdcc827b94",
+        "g": "70a63b74.44894c",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": true,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "5",
+        "payloadType": "num",
+        "x": 150,
+        "y": 600,
+        "wires": [
+            [
+                "cf0d5223.b4dab"
+            ]
+        ]
+    },
+    {
+        "id": "ed025e5c.648858",
+        "type": "modbus-flex-getter",
+        "z": "45c928fdcc827b94",
+        "g": "ee01b6d1.f76f98",
+        "name": "PQA Modbus TCP",
+        "showStatusActivities": false,
+        "showErrors": false,
+        "logIOActivities": false,
+        "server": "ae58460d.12c698",
+        "useIOFile": false,
+        "ioFile": "",
+        "useIOForPayload": false,
+        "emptyMsgOnFail": false,
+        "keepMsgProperties": false,
+        "x": 430,
+        "y": 260,
+        "wires": [
+            [
+                "a65e22e6.71c65"
+            ],
+            []
+        ]
+    },
+    {
+        "id": "6188debb.009948",
+        "type": "function",
+        "z": "45c928fdcc827b94",
+        "g": "ee01b6d1.f76f98",
+        "name": "Lectura PQA",
+        "func": "var count = context.get(\"Count\")||0;\n\n// Real Time Parameters\nif(count === 0){\n    msg.topic = \"Real Time Parameters\";\n    msg.payload = { 'fc': 3, \n                    'unitid': 5, \n                    'address': 16384, \n                    'quantity': 39*2 \n    }\n    count ++;\n}\n\n// Energy Parameters\nelse if (count == 1){\n    msg.topic = \"Energy Parameters\";\n    msg.payload = { 'fc': 3, \n                    'unitid': 5, \n                    'address': 16456, \n                    'quantity': 24*2 \n    }\n    count ++;\n}\n\n// Harmonics - Power Quality\nelse if (count == 2){\n    msg.topic = \"Power Quality\";\n    msg.payload = { 'fc': 3, \n                    'unitid': 5, \n                    'address': 16474, \n                    'quantity': 8 \n    }\n    count ++;\n}\n\n// Phase Angles\nelse if (count == 3){\n    msg.topic = \"Phase Angles\";\n    msg.payload = { 'fc': 3, \n                    'unitid': 5, \n                    'address': 17056, \n                    'quantity': 5 \n    }\n    count ++;\n}\nelse if (count == 4){\n    msg.topic = \"Harmonics_V1(V12)\";\n    msg.payload = { 'fc': 3, \n                    'unitid': 5, \n                    'address': 16482, \n                    'quantity': 12 \n    }\n    count ++;\n}\nelse if (count == 5){\n    msg.topic = \"Harmonics_V2(V31)\";\n    msg.payload = { 'fc': 3, \n                    'unitid': 5, \n                    'address': 16516, \n                    'quantity': 12 \n    }\n    count ++;\n}\nelse if (count == 6){\n    msg.topic = \"Harmonics_V3(V23)\";\n    msg.payload = { 'fc': 3, \n                    'unitid': 5, \n                    'address': 16550, \n                    'quantity': 12 \n    }\n    count ++;\n}\nelse if (count == 7){\n    msg.topic = \"Harmonics_I1\";\n    msg.payload = { 'fc': 3, \n                    'unitid': 5, \n                    'address': 16584, \n                    'quantity': 12 \n    }\n    count ++;\n}\nelse if (count == 8){\n    msg.topic = \"Harmonics_I2\";\n    msg.payload = { 'fc': 3, \n                    'unitid': 5, \n                    'address': 16617, \n                    'quantity': 12 \n    }\n    count ++;\n}\nelse if (count == 9){\n    msg.topic = \"Harmonics_I3\";\n    msg.payload = { 'fc': 3, \n                    'unitid': 5, \n                    'address': 16650, \n                    'quantity': 12 \n    }\n    count ++;\n}\n\n// Error\nelse {\n    msg.topic = msg.payload;\n    msg.payload = \"Function Error!\";\n}\n\n// Count Reset\nif(count > 9){count = 0;}\n\n// Context update\ncontext.set(\"Count\",count);\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 250,
+        "y": 260,
+        "wires": [
+            [
+                "ed025e5c.648858"
+            ]
+        ]
+    },
+    {
+        "id": "5fe9be31.70c2a",
+        "type": "inject",
+        "z": "45c928fdcc827b94",
+        "g": "ee01b6d1.f76f98",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            }
+        ],
+        "repeat": "0.5",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "true",
+        "payloadType": "bool",
+        "x": 110,
+        "y": 260,
+        "wires": [
+            [
+                "6188debb.009948"
+            ]
+        ]
+    },
+    {
+        "id": "1f4cd023.43eb4",
+        "type": "function",
+        "z": "45c928fdcc827b94",
+        "g": "ee01b6d1.f76f98",
+        "name": "Real Time Parameters IEC754 to Float ",
+        "func": "var CTS = global.get('PQA.CTS') || null;\nvar RelCT = CTS !== null ? CTS.CT1/CTS.CT2 :1;\n\n// Convert 2 registers of 16 bits in one of 32 bits\nvar Frequency               = ((msg.payload[0] << 16) + msg.payload[1]); Frequency                  = Int2Float32(Frequency);\nvar Phase_1_Voltage\t        = ((msg.payload[2] << 16) + msg.payload[3]); Phase_1_Voltage            = Int2Float32(Phase_1_Voltage);\nvar Phase_2_Voltage         = ((msg.payload[4] << 16) + msg.payload[5]); Phase_2_Voltage            = Int2Float32(Phase_2_Voltage);\nvar Phase_3_Voltage         = ((msg.payload[6] << 16) + msg.payload[7]); Phase_3_Voltage            = Int2Float32(Phase_3_Voltage);\nvar Average_Phase_Voltage\t= ((msg.payload[8] << 16) + msg.payload[9]); Average_Phase_Voltage      = Int2Float32(Average_Phase_Voltage);\n\nvar Line_Voltage_1_2        = ((msg.payload[10] << 16) + msg.payload[11]); Line_Voltage_1_2         = Int2Float32(Line_Voltage_1_2);\nvar Line_Voltage_2_3        = ((msg.payload[12] << 16) + msg.payload[13]); Line_Voltage_2_3         = Int2Float32(Line_Voltage_2_3);\nvar Line_Voltage_3_1        = ((msg.payload[14] << 16) + msg.payload[15]); Line_Voltage_3_1         = Int2Float32(Line_Voltage_3_1);\nvar Average_Line_Voltage\t= ((msg.payload[16] << 16) + msg.payload[17]); Average_Line_Voltage     = Int2Float32(Average_Line_Voltage);\n\nvar Total_Phase_A_Current   = ((msg.payload[18] << 16) + msg.payload[19]); Total_Phase_A_Current    = Int2Float32(Total_Phase_A_Current);\nvar Total_Phase_B_Current\t= ((msg.payload[20] << 16) + msg.payload[21]); Total_Phase_B_Current    = Int2Float32(Total_Phase_B_Current);\nvar Total_Phase_C_Current   = ((msg.payload[22] << 16) + msg.payload[23]); Total_Phase_C_Current    = Int2Float32(Total_Phase_C_Current);\nvar Average_Phase_Current\t= ((msg.payload[24] << 16) + msg.payload[25]); Average_Phase_Current    = Int2Float32(Average_Phase_Current);\nvar Neutral_Current         = ((msg.payload[26] << 16) + msg.payload[27]); Neutral_Current          = Int2Float32(Neutral_Current);\n\nvar Phase_A_Power           = ((msg.payload[28] << 16) + msg.payload[29]); Phase_A_Power            = Int2Float32(Phase_A_Power);\nvar Phase_B_Power\t        = ((msg.payload[30] << 16) + msg.payload[31]); Phase_B_Power            = Int2Float32(Phase_B_Power);\nvar Phase_C_Power           = ((msg.payload[32] << 16) + msg.payload[33]); Phase_C_Power\t        = Int2Float32(Phase_C_Power);\nvar Total_System_Power      = ((msg.payload[34] << 16) + msg.payload[35]); Total_System_Power       = Int2Float32(Total_System_Power);\n\nvar Phase_A_Reactive_Power  = ((msg.payload[36] << 16) + msg.payload[37]); Phase_A_Reactive_Power   = Int2Float32(Phase_A_Reactive_Power);\nvar Phase_B_Reactive_Power\t= ((msg.payload[38] << 16) + msg.payload[39]); Phase_B_Reactive_Power   = Int2Float32(Phase_B_Reactive_Power);\nvar Phase_C_Reactive_Power\t= ((msg.payload[40] << 16) + msg.payload[41]); Phase_C_Reactive_Power   = Int2Float32(Phase_C_Reactive_Power);\nvar Total_Reactive_Power    = ((msg.payload[42] << 16) + msg.payload[43]); Total_Reactive_Power     = Int2Float32(Total_Reactive_Power);\n\nvar Phase_A_Apparent_Power\t= ((msg.payload[44] << 16) + msg.payload[45]); Phase_A_Apparent_Power   = Int2Float32(Phase_A_Apparent_Power);\nvar Phase_B_Apparent_Power\t= ((msg.payload[46] << 16) + msg.payload[47]); Phase_B_Apparent_Power   = Int2Float32(Phase_B_Apparent_Power);\nvar Phase_C_Apparent_Power\t= ((msg.payload[48] << 16) + msg.payload[49]); Phase_C_Apparent_Power   = Int2Float32(Phase_C_Apparent_Power);\nvar Total_Apparent_Power\t= ((msg.payload[50] << 16) + msg.payload[51]); Total_Apparent_Power     = Int2Float32(Total_Apparent_Power);\n\nvar Phase_A_Power_Factor\t= ((msg.payload[52] << 16) + msg.payload[53]); Phase_A_Power_Factor     = Int2Float32(Phase_A_Power_Factor);\nvar Phase_B_Power_Factor    = ((msg.payload[54] << 16) + msg.payload[55]); Phase_B_Power_Factor     = Int2Float32(Phase_B_Power_Factor);\nvar Phase_C_Power_Factor    = ((msg.payload[56] << 16) + msg.payload[57]); Phase_C_Power_Factor     = Int2Float32(Phase_C_Power_Factor);\nvar Total_Power_Factor\t    = ((msg.payload[58] << 16) + msg.payload[59]); Total_Power_Factor       = Int2Float32(Total_Power_Factor);\n\n// Output Message\nmsg.payload = {\n    \"Frequency\"                 : Frequency,\n    \"Phase_1_Voltage\"           : Phase_1_Voltage,\n    \"Phase_2_Voltage\"           : Phase_2_Voltage,\n    \"Phase_3_Voltage\"           : Phase_3_Voltage,\n    \"Average_Phase_Voltage\"     : Average_Phase_Voltage,\n    \"Line_Voltage_1_2\"          : Line_Voltage_1_2,\n    \"Line_Voltage_2_3\"          : Line_Voltage_2_3,\n    \"Line_Voltage_3_1\"          : Line_Voltage_3_1,\n    \"Average_Line_Voltage\"      : Average_Line_Voltage,\n    \"Total_Phase_A_Current\"     : RelCT * Total_Phase_A_Current,\n    \"Total_Phase_B_Current\"     : RelCT * Total_Phase_B_Current,\n    \"Total_Phase_C_Current\"     : RelCT * Total_Phase_C_Current,\n    \"Average_Phase_Current\"     : RelCT * Average_Phase_Current,\n    \"Neutral_Current\"           : Neutral_Current,\n    \"Phase_A_Power\"             : RelCT * Phase_A_Power/1000,\n    \"Phase_B_Power\"             : RelCT * Phase_B_Power/1000,\n    \"Phase_C_Power\"             : RelCT * Phase_C_Power/1000,\n    \"Total_System_Power\"        : RelCT * Total_System_Power/1000,\n    \"Phase_A_Reactive_Power\"    : RelCT * Phase_A_Reactive_Power/1000,\n    \"Phase_B_Reactive_Power\"    : RelCT * Phase_B_Reactive_Power/1000,\n    \"Phase_C_Reactive_Power\"    : RelCT * Phase_C_Reactive_Power/1000,\n    \"Total_Reactive_Power\"      : RelCT * Total_Reactive_Power/1000,\n    \"Phase_A_Apparent_Power\"    : RelCT * Phase_A_Apparent_Power/1000,\n    \"Phase_B_Apparent_Power\"    : RelCT * Phase_B_Apparent_Power/1000,\n    \"Phase_C_Apparent_Power\"    : RelCT * Phase_C_Apparent_Power/1000,\n    \"Total_Apparent_Power\"      : RelCT * Total_Apparent_Power/1000,\n    \"Phase_A_Power_Factor\"      : Phase_A_Power_Factor,\n    \"Phase_B_Power_Factor\"      : Phase_B_Power_Factor,\n    \"Phase_C_Power_Factor\"      : Phase_C_Power_Factor,\n    \"Total_Power_Factor\"        : Total_Power_Factor\n}\n\nreturn msg;\n\n\n\n\n// IEC 754 to Float Function\n\n/* Converts from an number, string, buffer or array representing an IEEE-754 value\n * to a javascript float.\n * The following may be given in msg.payload:\n *      A string representing a number, which may be hex or binary\n *        examples, \"1735\"  \"0x02045789\"  0b01000000010010010000111111011011\n *      An integer value\n *      A four element array or buffer of 8 bit values, most significant byte first.\n*/ \n// first make a number from the given payload if necessary\n\nfunction Int2Float32(bytes) {\n    var sign = (bytes & 0x80000000) ? -1 : 1;\n    var exponent = ((bytes >> 23) & 0xFF) - 127;\n    var significand = (bytes & ~(-1 << 23));\n\n    if (exponent == 128) \n        return sign * ((significand) ? Number.NaN : Number.POSITIVE_INFINITY);\n\n    if (exponent == -127) {\n        if (significand === 0) return sign * 0.0;\n        exponent = -126;\n        significand /= (1 << 22);\n    } else significand = (significand | (1 << 23)) / (1 << 23);\n\n    return sign * significand * Math.pow(2, exponent);\n}\n\n// Créditos: https://flows.nodered.org/flow/359ead34237b7ab6ec0465ee85a34b62RelCT",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "x": 890,
+        "y": 80,
+        "wires": [
+            [
+                "329a20ae.addd08"
+            ]
+        ]
+    },
+    {
+        "id": "a65e22e6.71c65",
+        "type": "switch",
+        "z": "45c928fdcc827b94",
+        "g": "ee01b6d1.f76f98",
+        "name": "",
+        "property": "topic",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "eq",
+                "v": "Real Time Parameters",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "Energy Parameters",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "Power Quality",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "Phase Angles",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "Harmonics_V1(V12)",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "Harmonics_V2(V31)",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "Harmonics_V3(V23)",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "Harmonics_I1",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "Harmonics_I2",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "Harmonics_I3",
+                "vt": "str"
+            }
+        ],
+        "checkall": "false",
+        "repair": false,
+        "outputs": 10,
+        "x": 590,
+        "y": 260,
+        "wires": [
+            [
+                "1f4cd023.43eb4"
+            ],
+            [
+                "d1a9dbc4.33f7e"
+            ],
+            [
+                "993f38ab.482e9"
+            ],
+            [
+                "3f9fcc24.6fac3c"
+            ],
+            [
+                "8d348d63.134818"
+            ],
+            [
+                "339b7b9a.f4bb14"
+            ],
+            [
+                "9d6fe8b8.eb7cf8"
+            ],
+            [
+                "72ceef76.7f8f1"
+            ],
+            [
+                "139d011a.841abf"
+            ],
+            [
+                "ddee4aa9.906988"
+            ]
+        ]
+    },
+    {
+        "id": "993f38ab.482e9",
+        "type": "function",
+        "z": "45c928fdcc827b94",
+        "g": "ee01b6d1.f76f98",
+        "name": "Harmonics - Power Quality",
+        "func": "msg.payload = {\n    \"THD_V1(V12)\"   : msg.payload[0]/100,\n    \"THD_V2(V31)\"   : msg.payload[1]/100,\n    \"THD_V3(V23)\"   : msg.payload[2]/100,\n    \"THD_avg\"       : msg.payload[3]/100,\n    \"THD_I1\"        : msg.payload[4]/100,\n    \"THD_I2\"        : msg.payload[5]/100,\n    \"THD_I3\"        : msg.payload[6]/100,\n    \"THD_Iavg\"      : msg.payload[7]/100\n}\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "x": 860,
+        "y": 160,
+        "wires": [
+            [
+                "7bbced0c.e692d4"
+            ]
+        ]
+    },
+    {
+        "id": "3f9fcc24.6fac3c",
+        "type": "function",
+        "z": "45c928fdcc827b94",
+        "g": "ee01b6d1.f76f98",
+        "name": "Phase Angles",
+        "func": "msg.payload = {\n    \"Phase_Angle_of_V2_to_V1\"   : msg.payload[0]/10,\n    \"Phase_Angle_of_V3_to_V1\"   : msg.payload[1]/10,\n    \"Phase_Angle_of_I1_to_V1\"   : msg.payload[2]/10,\n    \"Phase_Angle_of_I2_to_V1\"   : msg.payload[3]/10,\n    \"Phase_Angle_of_I3_to_V1\"   : msg.payload[4]/10\n}\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 820,
+        "y": 200,
+        "wires": [
+            [
+                "8f2ea546.30e13"
+            ]
+        ]
+    },
+    {
+        "id": "d1a9dbc4.33f7e",
+        "type": "function",
+        "z": "45c928fdcc827b94",
+        "g": "ee01b6d1.f76f98",
+        "name": "Energy Parameters IEC754 to Float ",
+        "func": "/* Converts from an number, string, buffer or array representing an IEEE-754 value\n * to a javascript float.\n * The following may be given in msg.payload:\n *      A string representing a number, which may be hex or binary\n *        examples, \"1735\"  \"0x02045789\"  0b01000000010010010000111111011011\n *      An integer value\n *      A four element array or buffer of 8 bit values, most significant byte first.\n*/ \n// first make a number from the given payload if necessary\n\n\n// Convert 2 registers of 16 bits in one of 32 bits\nvar Consumed_Energy\t            = ((msg.payload[0] << 16) + msg.payload[1]); Consumed_Energy            = Int2Float32(Consumed_Energy);\nvar Generated_Energy\t\t    = ((msg.payload[2] << 16) + msg.payload[3]); Generated_Energy           = Int2Float32(Generated_Energy);\nvar Consumed_Reactive_Energy    = ((msg.payload[4] << 16) + msg.payload[5]); Consumed_Reactive_Energy   = Int2Float32(Consumed_Reactive_Energy);\nvar Generated_Reactive_Energy   = ((msg.payload[6] << 16) + msg.payload[7]); Generated_Reactive_Energy  = Int2Float32(Generated_Reactive_Energy);\nvar Total_Energy\t\t        = ((msg.payload[8] << 16) + msg.payload[9]); Total_Energy               = Int2Float32(Total_Energy);\n\n// Output Message\nmsg.payload = {\n    \"Consumed_Energy\"           : Consumed_Energy,\n    \"Generated_Energy\"          : Generated_Energy,\n    \"Consumed_Reactive_Energy\"  : Consumed_Reactive_Energy,\n    \"Generated_Reactive_Energy\" : Generated_Energy,\n    \"Total_Energy\"              : Total_Energy\n}\n\nreturn msg;\n\n// IEC 754 to Float Function\nfunction Int2Float32(bytes) {\n    var sign = (bytes & 0x80000000) ? -1 : 1;\n    var exponent = ((bytes >> 23) & 0xFF) - 127;\n    var significand = (bytes & ~(-1 << 23));\n\n    if (exponent == 128) \n        return sign * ((significand) ? Number.NaN : Number.POSITIVE_INFINITY);\n\n    if (exponent == -127) {\n        if (significand === 0) return sign * 0.0;\n        exponent = -126;\n        significand /= (1 << 22);\n    } else significand = (significand | (1 << 23)) / (1 << 23);\n\n    return sign * significand * Math.pow(2, exponent);\n}\n\n// Créditos: https://flows.nodered.org/flow/359ead34237b7ab6ec0465ee85a34b62",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "x": 880,
+        "y": 120,
+        "wires": [
+            [
+                "f69145ec.595428"
+            ]
+        ]
+    },
+    {
+        "id": "329a20ae.addd08",
+        "type": "change",
+        "z": "45c928fdcc827b94",
+        "g": "ee01b6d1.f76f98",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "#:(memoryOnly)::PQA.Real_Time_Parameters",
+                "pt": "global",
+                "to": "payload",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 1230,
+        "y": 80,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "f69145ec.595428",
+        "type": "change",
+        "z": "45c928fdcc827b94",
+        "g": "ee01b6d1.f76f98",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "#:(memoryOnly)::PQA.Energy_Parameters",
+                "pt": "global",
+                "to": "payload",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 1220,
+        "y": 120,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "7bbced0c.e692d4",
+        "type": "change",
+        "z": "45c928fdcc827b94",
+        "g": "ee01b6d1.f76f98",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "#:(memoryOnly)::PQA.Harmonics.Power_Quality",
+                "pt": "global",
+                "to": "payload",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 1240,
+        "y": 160,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "8f2ea546.30e13",
+        "type": "change",
+        "z": "45c928fdcc827b94",
+        "g": "ee01b6d1.f76f98",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "#:(memoryOnly)::PQA.Phase_Angles",
+                "pt": "global",
+                "to": "payload",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 1210,
+        "y": 200,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "8d348d63.134818",
+        "type": "function",
+        "z": "45c928fdcc827b94",
+        "g": "ee01b6d1.f76f98",
+        "name": "Harmonics - V1(V12)",
+        "func": "msg.payload = {\n    \"THD_V1(V12)_3o\"    : msg.payload[1]/100,\n    \"THD_V1(V12)_5o\"    : msg.payload[3]/100,\n    \"THD_V1(V12)_7o\"    : msg.payload[5]/100,\n    \"THD_V1(V12)_9o\"    : msg.payload[7]/100,\n    \"THD_V1(V12)_11o\"   : msg.payload[9]/100,\n    \"THD_V1(V12)_13o\"   : msg.payload[11]/100,\n}\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 840,
+        "y": 240,
+        "wires": [
+            [
+                "5ff5e28d.2c7d74"
+            ]
+        ]
+    },
+    {
+        "id": "5ff5e28d.2c7d74",
+        "type": "change",
+        "z": "45c928fdcc827b94",
+        "g": "ee01b6d1.f76f98",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "#:(memoryOnly)::PQA.Harmonics.V1_V12",
+                "pt": "global",
+                "to": "payload",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 1220,
+        "y": 240,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "9d6fe8b8.eb7cf8",
+        "type": "function",
+        "z": "45c928fdcc827b94",
+        "g": "ee01b6d1.f76f98",
+        "name": "Harmonics_V3(V23)",
+        "func": "msg.payload = {\n    \"THD_V3(V23)_3o\"    : msg.payload[1]/100,\n    \"THD_V3(V23)_5o\"    : msg.payload[3]/100,\n    \"THD_V3(V23)_7o\"    : msg.payload[5]/100,\n    \"THD_V3(V23)_9o\"    : msg.payload[7]/100,\n    \"THD_V3(V23)_11o\"   : msg.payload[9]/100,\n    \"THD_V3(V23)_13o\"   : msg.payload[11]/100,\n}\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 830,
+        "y": 320,
+        "wires": [
+            [
+                "f8287ebe.9bb3c8"
+            ]
+        ]
+    },
+    {
+        "id": "f8287ebe.9bb3c8",
+        "type": "change",
+        "z": "45c928fdcc827b94",
+        "g": "ee01b6d1.f76f98",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "#:(memoryOnly)::PQA.Harmonics.V3_V23",
+                "pt": "global",
+                "to": "payload",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 1220,
+        "y": 320,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "eaf2e52.a8fae18",
+        "type": "change",
+        "z": "45c928fdcc827b94",
+        "g": "ee01b6d1.f76f98",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "#:(memoryOnly)::PQA.Harmonics.V2_V31",
+                "pt": "global",
+                "to": "payload",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 1220,
+        "y": 280,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "72ceef76.7f8f1",
+        "type": "function",
+        "z": "45c928fdcc827b94",
+        "g": "ee01b6d1.f76f98",
+        "name": "Harmonics_I1",
+        "func": "msg.payload = {\n    \"THD_I1_3o\"    : msg.payload[1]/100,\n    \"THD_I1_5o\"    : msg.payload[3]/100,\n    \"THD_I1_7o\"    : msg.payload[5]/100,\n    \"THD_I1_9o\"    : msg.payload[7]/100,\n    \"THD_I1_11o\"   : msg.payload[9]/100,\n    \"THD_I1_13o\"   : msg.payload[11]/100,\n}\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 820,
+        "y": 360,
+        "wires": [
+            [
+                "43ffc14d.a3cac8"
+            ]
+        ]
+    },
+    {
+        "id": "139d011a.841abf",
+        "type": "function",
+        "z": "45c928fdcc827b94",
+        "g": "ee01b6d1.f76f98",
+        "name": "Harmonics_I2",
+        "func": "msg.payload = {\n    \"THD_I2_3o\"    : msg.payload[1]/100,\n    \"THD_I2_5o\"    : msg.payload[3]/100,\n    \"THD_I2_7o\"    : msg.payload[5]/100,\n    \"THD_I2_9o\"    : msg.payload[7]/100,\n    \"THD_I2_11o\"   : msg.payload[9]/100,\n    \"THD_I2_13o\"   : msg.payload[11]/100,\n}\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 820,
+        "y": 400,
+        "wires": [
+            [
+                "23986012.d8fc9"
+            ]
+        ]
+    },
+    {
+        "id": "ddee4aa9.906988",
+        "type": "function",
+        "z": "45c928fdcc827b94",
+        "g": "ee01b6d1.f76f98",
+        "name": "Harmonics_I3",
+        "func": "msg.payload = {\n    \"THD_I3_3o\"    : msg.payload[1]/100,\n    \"THD_I3_5o\"    : msg.payload[3]/100,\n    \"THD_I3_7o\"    : msg.payload[5]/100,\n    \"THD_I3_9o\"    : msg.payload[7]/100,\n    \"THD_I3_11o\"   : msg.payload[9]/100,\n    \"THD_I3_13o\"   : msg.payload[11]/100,\n}\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 820,
+        "y": 440,
+        "wires": [
+            [
+                "894eb396.e8f0c"
+            ]
+        ]
+    },
+    {
+        "id": "339b7b9a.f4bb14",
+        "type": "function",
+        "z": "45c928fdcc827b94",
+        "g": "ee01b6d1.f76f98",
+        "name": "Harmonics_V2(V31)",
+        "func": "msg.payload = {\n    \"THD_V2(V31)_3o\"    : msg.payload[1]/100,\n    \"THD_V2(V31)_5o\"    : msg.payload[3]/100,\n    \"THD_V2(V31)_7o\"    : msg.payload[5]/100,\n    \"THD_V2(V31)_9o\"    : msg.payload[7]/100,\n    \"THD_V2(V31)_11o\"   : msg.payload[9]/100,\n    \"THD_V2(V31)_13o\"   : msg.payload[11]/100,\n}\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 830,
+        "y": 280,
+        "wires": [
+            [
+                "eaf2e52.a8fae18"
+            ]
+        ]
+    },
+    {
+        "id": "894eb396.e8f0c",
+        "type": "change",
+        "z": "45c928fdcc827b94",
+        "g": "ee01b6d1.f76f98",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "#:(memoryOnly)::PQA.Harmonics.I3",
+                "pt": "global",
+                "to": "payload",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 1200,
+        "y": 440,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "23986012.d8fc9",
+        "type": "change",
+        "z": "45c928fdcc827b94",
+        "g": "ee01b6d1.f76f98",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "#:(memoryOnly)::PQA.Harmonics.I2",
+                "pt": "global",
+                "to": "payload",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 1200,
+        "y": 400,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "43ffc14d.a3cac8",
+        "type": "change",
+        "z": "45c928fdcc827b94",
+        "g": "ee01b6d1.f76f98",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "#:(memoryOnly)::PQA.Harmonics.I1",
+                "pt": "global",
+                "to": "payload",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 1200,
+        "y": 360,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "dc201b4c96bf9cb8",
+        "type": "comment",
+        "z": "45c928fdcc827b94",
+        "g": "38940f8.c9c27f",
+        "name": "Si Cambia dirección IP PQA escribirla aquí",
+        "info": "",
+        "x": 650,
+        "y": 550,
+        "wires": []
+    },
+    {
+        "id": "acb738077324d4f5",
+        "type": "link out",
+        "z": "45c928fdcc827b94",
+        "g": "38940f8.c9c27f",
+        "name": "",
+        "links": [
+            "756bcd33a6cec802"
+        ],
+        "x": 655,
+        "y": 590,
+        "wires": []
+    },
+    {
+        "id": "ead83bdf05616014",
+        "type": "inject",
+        "z": "45c928fdcc827b94",
+        "g": "38940f8.c9c27f",
+        "name": "IP pqa",
+        "props": [
+            {
+                "p": "payload"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": true,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "192.168.2.93",
+        "payloadType": "str",
+        "x": 560,
+        "y": 590,
+        "wires": [
+            [
+                "acb738077324d4f5"
+            ]
+        ]
+    }
+]
