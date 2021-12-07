@@ -1,93 +1,99 @@
 [
     {
-        "id": "45c928fdcc827b94",
+        "id": "00a94a92b4a92fe9",
         "type": "tab",
         "label": "PQA",
         "disabled": false,
         "info": ""
     },
     {
-        "id": "90f1b7d49e6c9117",
+        "id": "323bc1f107eef839",
         "type": "tab",
         "label": "Flow 1",
         "disabled": false,
         "info": ""
     },
     {
-        "id": "38940f8.c9c27f",
+        "id": "38b15402e5bf2d35",
         "type": "group",
-        "z": "45c928fdcc827b94",
+        "z": "00a94a92b4a92fe9",
         "name": "",
         "style": {
             "label": true
         },
         "nodes": [
-            "70a63b74.44894c",
-            "ee01b6d1.f76f98",
-            "dc201b4c96bf9cb8",
-            "acb738077324d4f5",
-            "ead83bdf05616014"
+            "abc2c8bc8582576b",
+            "85bfb7d199102d68",
+            "3f563ec18cbf031f",
+            "9633e7bbe79878eb",
+            "5ed1dc50b230c5fe"
         ],
         "x": -12,
-        "y": 13
+        "y": 13,
+        "w": 1464,
+        "h": 694
     },
     {
-        "id": "70a63b74.44894c",
+        "id": "abc2c8bc8582576b",
         "type": "group",
-        "z": "45c928fdcc827b94",
-        "g": "38940f8.c9c27f",
+        "z": "00a94a92b4a92fe9",
+        "g": "38b15402e5bf2d35",
         "name": "Configuración CTs",
         "style": {
             "label": true,
             "color": "#000000"
         },
         "nodes": [
-            "5c5b638c.a8f91c",
-            "cf0d5223.b4dab",
-            "7cc997fc.b5d5b8",
-            "83dce8ae2adb063d",
-            "d22f737e1faaee45"
+            "1e10dc753c78a617",
+            "75df2bcd108a3664",
+            "0fd3535cb13e373f",
+            "04dd66bafeac3f59",
+            "301535050dd7067c"
         ],
         "x": 54,
-        "y": 519
+        "y": 519,
+        "w": 412,
+        "h": 162
     },
     {
-        "id": "ee01b6d1.f76f98",
+        "id": "85bfb7d199102d68",
         "type": "group",
-        "z": "45c928fdcc827b94",
-        "g": "38940f8.c9c27f",
+        "z": "00a94a92b4a92fe9",
+        "g": "38b15402e5bf2d35",
         "name": "Lectura de datos eléctricos PQA",
         "style": {
             "label": true,
             "color": "#000000"
         },
         "nodes": [
-            "ed025e5c.648858",
-            "6188debb.009948",
-            "5fe9be31.70c2a",
-            "a65e22e6.71c65",
-            "993f38ab.482e9",
-            "3f9fcc24.6fac3c",
-            "d1a9dbc4.33f7e",
-            "329a20ae.addd08",
-            "f69145ec.595428",
-            "7bbced0c.e692d4",
-            "8f2ea546.30e13",
-            "8d348d63.134818",
-            "5ff5e28d.2c7d74",
-            "9d6fe8b8.eb7cf8",
-            "f8287ebe.9bb3c8",
-            "eaf2e52.a8fae18",
-            "72ceef76.7f8f1",
-            "139d011a.841abf",
-            "ddee4aa9.906988",
-            "339b7b9a.f4bb14",
-            "894eb396.e8f0c",
-            "23986012.d8fc9",
-            "43ffc14d.a3cac8"
+            "996b540aa9d2424e",
+            "cdd4a90d86bd3f3c",
+            "34c866df5cf67e31",
+            "bdcd027597f8f678",
+            "61d364f60ac7cfd7",
+            "9e3272f43311110b",
+            "67414b65758ec298",
+            "6470cabde7abf453",
+            "8eb4884a4c6e13f8",
+            "4895e08c8a69d1db",
+            "69f76eb4eeecc615",
+            "e6fcb6dbe65642e7",
+            "d7e6dd8f9cc51484",
+            "fd44492123a58c15",
+            "18b4a88e2b654a88",
+            "65958f3368d58c3d",
+            "33a5bbf5bc8ca6a6",
+            "a683389291a3b5f6",
+            "670f3a8a7ca251b2",
+            "b32133b937bca905",
+            "efc7cfd0766ffc47",
+            "8602298c75fd8441",
+            "5dcfb06cbde574fe"
         ],
         "x": 14,
-        "y": 39
+        "y": 39,
+        "w": 1412,
+        "h": 442
     },
     {
         "id": "ae58460d.12c698",
@@ -229,14 +235,13 @@
         "order": 1,
         "disp": true,
         "width": 13,
-        "collapse": false,
-        "className": ""
+        "collapse": false
     },
     {
-        "id": "5c5b638c.a8f91c",
+        "id": "1e10dc753c78a617",
         "type": "change",
-        "z": "45c928fdcc827b94",
-        "g": "70a63b74.44894c",
+        "z": "00a94a92b4a92fe9",
+        "g": "abc2c8bc8582576b",
         "name": "",
         "rules": [
             {
@@ -259,10 +264,10 @@
         ]
     },
     {
-        "id": "cf0d5223.b4dab",
+        "id": "75df2bcd108a3664",
         "type": "change",
-        "z": "45c928fdcc827b94",
-        "g": "70a63b74.44894c",
+        "z": "00a94a92b4a92fe9",
+        "g": "abc2c8bc8582576b",
         "name": "",
         "rules": [
             {
@@ -285,10 +290,10 @@
         ]
     },
     {
-        "id": "7cc997fc.b5d5b8",
+        "id": "0fd3535cb13e373f",
         "type": "change",
-        "z": "45c928fdcc827b94",
-        "g": "70a63b74.44894c",
+        "z": "00a94a92b4a92fe9",
+        "g": "abc2c8bc8582576b",
         "name": "",
         "rules": [
             {
@@ -311,10 +316,10 @@
         ]
     },
     {
-        "id": "83dce8ae2adb063d",
+        "id": "04dd66bafeac3f59",
         "type": "inject",
-        "z": "45c928fdcc827b94",
-        "g": "70a63b74.44894c",
+        "z": "00a94a92b4a92fe9",
+        "g": "abc2c8bc8582576b",
         "name": "",
         "props": [
             {
@@ -332,15 +337,15 @@
         "y": 560,
         "wires": [
             [
-                "5c5b638c.a8f91c"
+                "1e10dc753c78a617"
             ]
         ]
     },
     {
-        "id": "d22f737e1faaee45",
+        "id": "301535050dd7067c",
         "type": "inject",
-        "z": "45c928fdcc827b94",
-        "g": "70a63b74.44894c",
+        "z": "00a94a92b4a92fe9",
+        "g": "abc2c8bc8582576b",
         "name": "",
         "props": [
             {
@@ -358,15 +363,15 @@
         "y": 600,
         "wires": [
             [
-                "cf0d5223.b4dab"
+                "75df2bcd108a3664"
             ]
         ]
     },
     {
-        "id": "ed025e5c.648858",
+        "id": "996b540aa9d2424e",
         "type": "modbus-flex-getter",
-        "z": "45c928fdcc827b94",
-        "g": "ee01b6d1.f76f98",
+        "z": "00a94a92b4a92fe9",
+        "g": "85bfb7d199102d68",
         "name": "PQA Modbus TCP",
         "showStatusActivities": false,
         "showErrors": false,
@@ -381,16 +386,16 @@
         "y": 260,
         "wires": [
             [
-                "a65e22e6.71c65"
+                "bdcd027597f8f678"
             ],
             []
         ]
     },
     {
-        "id": "6188debb.009948",
+        "id": "cdd4a90d86bd3f3c",
         "type": "function",
-        "z": "45c928fdcc827b94",
-        "g": "ee01b6d1.f76f98",
+        "z": "00a94a92b4a92fe9",
+        "g": "85bfb7d199102d68",
         "name": "Lectura PQA",
         "func": "var count = context.get(\"Count\")||0;\n\n// Real Time Parameters\nif(count === 0){\n    msg.topic = \"Real Time Parameters\";\n    msg.payload = { 'fc': 3, \n                    'unitid': 5, \n                    'address': 16384, \n                    'quantity': 39*2 \n    }\n    count ++;\n}\n\n// Energy Parameters\nelse if (count == 1){\n    msg.topic = \"Energy Parameters\";\n    msg.payload = { 'fc': 3, \n                    'unitid': 5, \n                    'address': 16456, \n                    'quantity': 24*2 \n    }\n    count ++;\n}\n\n// Harmonics - Power Quality\nelse if (count == 2){\n    msg.topic = \"Power Quality\";\n    msg.payload = { 'fc': 3, \n                    'unitid': 5, \n                    'address': 16474, \n                    'quantity': 8 \n    }\n    count ++;\n}\n\n// Phase Angles\nelse if (count == 3){\n    msg.topic = \"Phase Angles\";\n    msg.payload = { 'fc': 3, \n                    'unitid': 5, \n                    'address': 17056, \n                    'quantity': 5 \n    }\n    count ++;\n}\nelse if (count == 4){\n    msg.topic = \"Harmonics_V1(V12)\";\n    msg.payload = { 'fc': 3, \n                    'unitid': 5, \n                    'address': 16482, \n                    'quantity': 12 \n    }\n    count ++;\n}\nelse if (count == 5){\n    msg.topic = \"Harmonics_V2(V31)\";\n    msg.payload = { 'fc': 3, \n                    'unitid': 5, \n                    'address': 16516, \n                    'quantity': 12 \n    }\n    count ++;\n}\nelse if (count == 6){\n    msg.topic = \"Harmonics_V3(V23)\";\n    msg.payload = { 'fc': 3, \n                    'unitid': 5, \n                    'address': 16550, \n                    'quantity': 12 \n    }\n    count ++;\n}\nelse if (count == 7){\n    msg.topic = \"Harmonics_I1\";\n    msg.payload = { 'fc': 3, \n                    'unitid': 5, \n                    'address': 16584, \n                    'quantity': 12 \n    }\n    count ++;\n}\nelse if (count == 8){\n    msg.topic = \"Harmonics_I2\";\n    msg.payload = { 'fc': 3, \n                    'unitid': 5, \n                    'address': 16617, \n                    'quantity': 12 \n    }\n    count ++;\n}\nelse if (count == 9){\n    msg.topic = \"Harmonics_I3\";\n    msg.payload = { 'fc': 3, \n                    'unitid': 5, \n                    'address': 16650, \n                    'quantity': 12 \n    }\n    count ++;\n}\n\n// Error\nelse {\n    msg.topic = msg.payload;\n    msg.payload = \"Function Error!\";\n}\n\n// Count Reset\nif(count > 9){count = 0;}\n\n// Context update\ncontext.set(\"Count\",count);\nreturn msg;",
         "outputs": 1,
@@ -402,16 +407,16 @@
         "y": 260,
         "wires": [
             [
-                "ed025e5c.648858"
+                "996b540aa9d2424e"
             ]
         ]
     },
     {
-        "id": "5fe9be31.70c2a",
+        "id": "34c866df5cf67e31",
         "type": "inject",
-        "z": "45c928fdcc827b94",
+        "z": "00a94a92b4a92fe9",
         "d": true,
-        "g": "ee01b6d1.f76f98",
+        "g": "85bfb7d199102d68",
         "name": "",
         "props": [
             {
@@ -429,15 +434,15 @@
         "y": 260,
         "wires": [
             [
-                "6188debb.009948"
+                "cdd4a90d86bd3f3c"
             ]
         ]
     },
     {
-        "id": "a65e22e6.71c65",
+        "id": "bdcd027597f8f678",
         "type": "switch",
-        "z": "45c928fdcc827b94",
-        "g": "ee01b6d1.f76f98",
+        "z": "00a94a92b4a92fe9",
+        "g": "85bfb7d199102d68",
         "name": "",
         "property": "topic",
         "propertyType": "msg",
@@ -501,39 +506,39 @@
         "wires": [
             [],
             [
-                "d1a9dbc4.33f7e"
+                "67414b65758ec298"
             ],
             [
-                "993f38ab.482e9"
+                "61d364f60ac7cfd7"
             ],
             [
-                "3f9fcc24.6fac3c"
+                "9e3272f43311110b"
             ],
             [
-                "8d348d63.134818"
+                "e6fcb6dbe65642e7"
             ],
             [
-                "339b7b9a.f4bb14"
+                "b32133b937bca905"
             ],
             [
-                "9d6fe8b8.eb7cf8"
+                "fd44492123a58c15"
             ],
             [
-                "72ceef76.7f8f1"
+                "33a5bbf5bc8ca6a6"
             ],
             [
-                "139d011a.841abf"
+                "a683389291a3b5f6"
             ],
             [
-                "ddee4aa9.906988"
+                "670f3a8a7ca251b2"
             ]
         ]
     },
     {
-        "id": "993f38ab.482e9",
+        "id": "61d364f60ac7cfd7",
         "type": "function",
-        "z": "45c928fdcc827b94",
-        "g": "ee01b6d1.f76f98",
+        "z": "00a94a92b4a92fe9",
+        "g": "85bfb7d199102d68",
         "name": "Harmonics - Power Quality",
         "func": "msg.payload = {\n    \"THD_V1(V12)\"   : msg.payload[0]/100,\n    \"THD_V2(V31)\"   : msg.payload[1]/100,\n    \"THD_V3(V23)\"   : msg.payload[2]/100,\n    \"THD_avg\"       : msg.payload[3]/100,\n    \"THD_I1\"        : msg.payload[4]/100,\n    \"THD_I2\"        : msg.payload[5]/100,\n    \"THD_I3\"        : msg.payload[6]/100,\n    \"THD_Iavg\"      : msg.payload[7]/100\n}\nreturn msg;",
         "outputs": 1,
@@ -545,15 +550,15 @@
         "y": 160,
         "wires": [
             [
-                "7bbced0c.e692d4"
+                "4895e08c8a69d1db"
             ]
         ]
     },
     {
-        "id": "3f9fcc24.6fac3c",
+        "id": "9e3272f43311110b",
         "type": "function",
-        "z": "45c928fdcc827b94",
-        "g": "ee01b6d1.f76f98",
+        "z": "00a94a92b4a92fe9",
+        "g": "85bfb7d199102d68",
         "name": "Phase Angles",
         "func": "msg.payload = {\n    \"Phase_Angle_of_V2_to_V1\"   : msg.payload[0]/10,\n    \"Phase_Angle_of_V3_to_V1\"   : msg.payload[1]/10,\n    \"Phase_Angle_of_I1_to_V1\"   : msg.payload[2]/10,\n    \"Phase_Angle_of_I2_to_V1\"   : msg.payload[3]/10,\n    \"Phase_Angle_of_I3_to_V1\"   : msg.payload[4]/10\n}\nreturn msg;",
         "outputs": 1,
@@ -565,15 +570,15 @@
         "y": 200,
         "wires": [
             [
-                "8f2ea546.30e13"
+                "69f76eb4eeecc615"
             ]
         ]
     },
     {
-        "id": "d1a9dbc4.33f7e",
+        "id": "67414b65758ec298",
         "type": "function",
-        "z": "45c928fdcc827b94",
-        "g": "ee01b6d1.f76f98",
+        "z": "00a94a92b4a92fe9",
+        "g": "85bfb7d199102d68",
         "name": "Energy Parameters IEC754 to Float ",
         "func": "/* Converts from an number, string, buffer or array representing an IEEE-754 value\n * to a javascript float.\n * The following may be given in msg.payload:\n *      A string representing a number, which may be hex or binary\n *        examples, \"1735\"  \"0x02045789\"  0b01000000010010010000111111011011\n *      An integer value\n *      A four element array or buffer of 8 bit values, most significant byte first.\n*/ \n// first make a number from the given payload if necessary\n\n\n// Convert 2 registers of 16 bits in one of 32 bits\nvar Consumed_Energy\t            = ((msg.payload[0] << 16) + msg.payload[1]); Consumed_Energy            = Int2Float32(Consumed_Energy);\nvar Generated_Energy\t\t    = ((msg.payload[2] << 16) + msg.payload[3]); Generated_Energy           = Int2Float32(Generated_Energy);\nvar Consumed_Reactive_Energy    = ((msg.payload[4] << 16) + msg.payload[5]); Consumed_Reactive_Energy   = Int2Float32(Consumed_Reactive_Energy);\nvar Generated_Reactive_Energy   = ((msg.payload[6] << 16) + msg.payload[7]); Generated_Reactive_Energy  = Int2Float32(Generated_Reactive_Energy);\nvar Total_Energy\t\t        = ((msg.payload[8] << 16) + msg.payload[9]); Total_Energy               = Int2Float32(Total_Energy);\n\n// Output Message\nmsg.payload = {\n    \"Consumed_Energy\"           : Consumed_Energy,\n    \"Generated_Energy\"          : Generated_Energy,\n    \"Consumed_Reactive_Energy\"  : Consumed_Reactive_Energy,\n    \"Generated_Reactive_Energy\" : Generated_Energy,\n    \"Total_Energy\"              : Total_Energy\n}\n\nreturn msg;\n\n// IEC 754 to Float Function\nfunction Int2Float32(bytes) {\n    var sign = (bytes & 0x80000000) ? -1 : 1;\n    var exponent = ((bytes >> 23) & 0xFF) - 127;\n    var significand = (bytes & ~(-1 << 23));\n\n    if (exponent == 128) \n        return sign * ((significand) ? Number.NaN : Number.POSITIVE_INFINITY);\n\n    if (exponent == -127) {\n        if (significand === 0) return sign * 0.0;\n        exponent = -126;\n        significand /= (1 << 22);\n    } else significand = (significand | (1 << 23)) / (1 << 23);\n\n    return sign * significand * Math.pow(2, exponent);\n}\n\n// Créditos: https://flows.nodered.org/flow/359ead34237b7ab6ec0465ee85a34b62",
         "outputs": 1,
@@ -584,15 +589,15 @@
         "y": 120,
         "wires": [
             [
-                "f69145ec.595428"
+                "8eb4884a4c6e13f8"
             ]
         ]
     },
     {
-        "id": "329a20ae.addd08",
+        "id": "6470cabde7abf453",
         "type": "change",
-        "z": "45c928fdcc827b94",
-        "g": "ee01b6d1.f76f98",
+        "z": "00a94a92b4a92fe9",
+        "g": "85bfb7d199102d68",
         "name": "",
         "rules": [
             {
@@ -615,10 +620,10 @@
         ]
     },
     {
-        "id": "f69145ec.595428",
+        "id": "8eb4884a4c6e13f8",
         "type": "change",
-        "z": "45c928fdcc827b94",
-        "g": "ee01b6d1.f76f98",
+        "z": "00a94a92b4a92fe9",
+        "g": "85bfb7d199102d68",
         "name": "",
         "rules": [
             {
@@ -641,10 +646,10 @@
         ]
     },
     {
-        "id": "7bbced0c.e692d4",
+        "id": "4895e08c8a69d1db",
         "type": "change",
-        "z": "45c928fdcc827b94",
-        "g": "ee01b6d1.f76f98",
+        "z": "00a94a92b4a92fe9",
+        "g": "85bfb7d199102d68",
         "name": "",
         "rules": [
             {
@@ -667,10 +672,10 @@
         ]
     },
     {
-        "id": "8f2ea546.30e13",
+        "id": "69f76eb4eeecc615",
         "type": "change",
-        "z": "45c928fdcc827b94",
-        "g": "ee01b6d1.f76f98",
+        "z": "00a94a92b4a92fe9",
+        "g": "85bfb7d199102d68",
         "name": "",
         "rules": [
             {
@@ -693,10 +698,10 @@
         ]
     },
     {
-        "id": "8d348d63.134818",
+        "id": "e6fcb6dbe65642e7",
         "type": "function",
-        "z": "45c928fdcc827b94",
-        "g": "ee01b6d1.f76f98",
+        "z": "00a94a92b4a92fe9",
+        "g": "85bfb7d199102d68",
         "name": "Harmonics - V1(V12)",
         "func": "msg.payload = {\n    \"THD_V1(V12)_3o\"    : msg.payload[1]/100,\n    \"THD_V1(V12)_5o\"    : msg.payload[3]/100,\n    \"THD_V1(V12)_7o\"    : msg.payload[5]/100,\n    \"THD_V1(V12)_9o\"    : msg.payload[7]/100,\n    \"THD_V1(V12)_11o\"   : msg.payload[9]/100,\n    \"THD_V1(V12)_13o\"   : msg.payload[11]/100,\n}\nreturn msg;",
         "outputs": 1,
@@ -708,15 +713,15 @@
         "y": 240,
         "wires": [
             [
-                "5ff5e28d.2c7d74"
+                "d7e6dd8f9cc51484"
             ]
         ]
     },
     {
-        "id": "5ff5e28d.2c7d74",
+        "id": "d7e6dd8f9cc51484",
         "type": "change",
-        "z": "45c928fdcc827b94",
-        "g": "ee01b6d1.f76f98",
+        "z": "00a94a92b4a92fe9",
+        "g": "85bfb7d199102d68",
         "name": "",
         "rules": [
             {
@@ -739,10 +744,10 @@
         ]
     },
     {
-        "id": "9d6fe8b8.eb7cf8",
+        "id": "fd44492123a58c15",
         "type": "function",
-        "z": "45c928fdcc827b94",
-        "g": "ee01b6d1.f76f98",
+        "z": "00a94a92b4a92fe9",
+        "g": "85bfb7d199102d68",
         "name": "Harmonics_V3(V23)",
         "func": "msg.payload = {\n    \"THD_V3(V23)_3o\"    : msg.payload[1]/100,\n    \"THD_V3(V23)_5o\"    : msg.payload[3]/100,\n    \"THD_V3(V23)_7o\"    : msg.payload[5]/100,\n    \"THD_V3(V23)_9o\"    : msg.payload[7]/100,\n    \"THD_V3(V23)_11o\"   : msg.payload[9]/100,\n    \"THD_V3(V23)_13o\"   : msg.payload[11]/100,\n}\nreturn msg;",
         "outputs": 1,
@@ -754,15 +759,15 @@
         "y": 320,
         "wires": [
             [
-                "f8287ebe.9bb3c8"
+                "18b4a88e2b654a88"
             ]
         ]
     },
     {
-        "id": "f8287ebe.9bb3c8",
+        "id": "18b4a88e2b654a88",
         "type": "change",
-        "z": "45c928fdcc827b94",
-        "g": "ee01b6d1.f76f98",
+        "z": "00a94a92b4a92fe9",
+        "g": "85bfb7d199102d68",
         "name": "",
         "rules": [
             {
@@ -785,10 +790,10 @@
         ]
     },
     {
-        "id": "eaf2e52.a8fae18",
+        "id": "65958f3368d58c3d",
         "type": "change",
-        "z": "45c928fdcc827b94",
-        "g": "ee01b6d1.f76f98",
+        "z": "00a94a92b4a92fe9",
+        "g": "85bfb7d199102d68",
         "name": "",
         "rules": [
             {
@@ -811,10 +816,10 @@
         ]
     },
     {
-        "id": "72ceef76.7f8f1",
+        "id": "33a5bbf5bc8ca6a6",
         "type": "function",
-        "z": "45c928fdcc827b94",
-        "g": "ee01b6d1.f76f98",
+        "z": "00a94a92b4a92fe9",
+        "g": "85bfb7d199102d68",
         "name": "Harmonics_I1",
         "func": "msg.payload = {\n    \"THD_I1_3o\"    : msg.payload[1]/100,\n    \"THD_I1_5o\"    : msg.payload[3]/100,\n    \"THD_I1_7o\"    : msg.payload[5]/100,\n    \"THD_I1_9o\"    : msg.payload[7]/100,\n    \"THD_I1_11o\"   : msg.payload[9]/100,\n    \"THD_I1_13o\"   : msg.payload[11]/100,\n}\nreturn msg;",
         "outputs": 1,
@@ -826,15 +831,15 @@
         "y": 360,
         "wires": [
             [
-                "43ffc14d.a3cac8"
+                "5dcfb06cbde574fe"
             ]
         ]
     },
     {
-        "id": "139d011a.841abf",
+        "id": "a683389291a3b5f6",
         "type": "function",
-        "z": "45c928fdcc827b94",
-        "g": "ee01b6d1.f76f98",
+        "z": "00a94a92b4a92fe9",
+        "g": "85bfb7d199102d68",
         "name": "Harmonics_I2",
         "func": "msg.payload = {\n    \"THD_I2_3o\"    : msg.payload[1]/100,\n    \"THD_I2_5o\"    : msg.payload[3]/100,\n    \"THD_I2_7o\"    : msg.payload[5]/100,\n    \"THD_I2_9o\"    : msg.payload[7]/100,\n    \"THD_I2_11o\"   : msg.payload[9]/100,\n    \"THD_I2_13o\"   : msg.payload[11]/100,\n}\nreturn msg;",
         "outputs": 1,
@@ -846,15 +851,15 @@
         "y": 400,
         "wires": [
             [
-                "23986012.d8fc9"
+                "8602298c75fd8441"
             ]
         ]
     },
     {
-        "id": "ddee4aa9.906988",
+        "id": "670f3a8a7ca251b2",
         "type": "function",
-        "z": "45c928fdcc827b94",
-        "g": "ee01b6d1.f76f98",
+        "z": "00a94a92b4a92fe9",
+        "g": "85bfb7d199102d68",
         "name": "Harmonics_I3",
         "func": "msg.payload = {\n    \"THD_I3_3o\"    : msg.payload[1]/100,\n    \"THD_I3_5o\"    : msg.payload[3]/100,\n    \"THD_I3_7o\"    : msg.payload[5]/100,\n    \"THD_I3_9o\"    : msg.payload[7]/100,\n    \"THD_I3_11o\"   : msg.payload[9]/100,\n    \"THD_I3_13o\"   : msg.payload[11]/100,\n}\nreturn msg;",
         "outputs": 1,
@@ -866,15 +871,15 @@
         "y": 440,
         "wires": [
             [
-                "894eb396.e8f0c"
+                "efc7cfd0766ffc47"
             ]
         ]
     },
     {
-        "id": "339b7b9a.f4bb14",
+        "id": "b32133b937bca905",
         "type": "function",
-        "z": "45c928fdcc827b94",
-        "g": "ee01b6d1.f76f98",
+        "z": "00a94a92b4a92fe9",
+        "g": "85bfb7d199102d68",
         "name": "Harmonics_V2(V31)",
         "func": "msg.payload = {\n    \"THD_V2(V31)_3o\"    : msg.payload[1]/100,\n    \"THD_V2(V31)_5o\"    : msg.payload[3]/100,\n    \"THD_V2(V31)_7o\"    : msg.payload[5]/100,\n    \"THD_V2(V31)_9o\"    : msg.payload[7]/100,\n    \"THD_V2(V31)_11o\"   : msg.payload[9]/100,\n    \"THD_V2(V31)_13o\"   : msg.payload[11]/100,\n}\nreturn msg;",
         "outputs": 1,
@@ -886,15 +891,15 @@
         "y": 280,
         "wires": [
             [
-                "eaf2e52.a8fae18"
+                "65958f3368d58c3d"
             ]
         ]
     },
     {
-        "id": "894eb396.e8f0c",
+        "id": "efc7cfd0766ffc47",
         "type": "change",
-        "z": "45c928fdcc827b94",
-        "g": "ee01b6d1.f76f98",
+        "z": "00a94a92b4a92fe9",
+        "g": "85bfb7d199102d68",
         "name": "",
         "rules": [
             {
@@ -917,10 +922,10 @@
         ]
     },
     {
-        "id": "23986012.d8fc9",
+        "id": "8602298c75fd8441",
         "type": "change",
-        "z": "45c928fdcc827b94",
-        "g": "ee01b6d1.f76f98",
+        "z": "00a94a92b4a92fe9",
+        "g": "85bfb7d199102d68",
         "name": "",
         "rules": [
             {
@@ -943,10 +948,10 @@
         ]
     },
     {
-        "id": "43ffc14d.a3cac8",
+        "id": "5dcfb06cbde574fe",
         "type": "change",
-        "z": "45c928fdcc827b94",
-        "g": "ee01b6d1.f76f98",
+        "z": "00a94a92b4a92fe9",
+        "g": "85bfb7d199102d68",
         "name": "",
         "rules": [
             {
@@ -969,10 +974,10 @@
         ]
     },
     {
-        "id": "dc201b4c96bf9cb8",
+        "id": "3f563ec18cbf031f",
         "type": "comment",
-        "z": "45c928fdcc827b94",
-        "g": "38940f8.c9c27f",
+        "z": "00a94a92b4a92fe9",
+        "g": "38b15402e5bf2d35",
         "name": "Si Cambia dirección IP PQA escribirla aquí",
         "info": "",
         "x": 650,
@@ -980,10 +985,10 @@
         "wires": []
     },
     {
-        "id": "acb738077324d4f5",
+        "id": "9633e7bbe79878eb",
         "type": "link out",
-        "z": "45c928fdcc827b94",
-        "g": "38940f8.c9c27f",
+        "z": "00a94a92b4a92fe9",
+        "g": "38b15402e5bf2d35",
         "name": "",
         "links": [
             "756bcd33a6cec802"
@@ -993,10 +998,10 @@
         "wires": []
     },
     {
-        "id": "ead83bdf05616014",
+        "id": "5ed1dc50b230c5fe",
         "type": "inject",
-        "z": "45c928fdcc827b94",
-        "g": "38940f8.c9c27f",
+        "z": "00a94a92b4a92fe9",
+        "g": "38b15402e5bf2d35",
         "name": "IP pqa",
         "props": [
             {
@@ -1014,14 +1019,14 @@
         "y": 590,
         "wires": [
             [
-                "acb738077324d4f5"
+                "9633e7bbe79878eb"
             ]
         ]
     },
     {
-        "id": "57288bdf6db2ed52",
+        "id": "dda960f8729cd6eb",
         "type": "modbus-flex-getter",
-        "z": "90f1b7d49e6c9117",
+        "z": "323bc1f107eef839",
         "name": "PQA Modbus TCP",
         "showStatusActivities": false,
         "showErrors": false,
@@ -1036,15 +1041,15 @@
         "y": 280,
         "wires": [
             [
-                "39272266cd26c05c"
+                "19336663eb434a01"
             ],
             []
         ]
     },
     {
-        "id": "e3ab81d39a45df61",
+        "id": "574de16ddb496b3a",
         "type": "function",
-        "z": "90f1b7d49e6c9117",
+        "z": "323bc1f107eef839",
         "name": "Lectura PQA",
         "func": "//Lee desde la direcion 8CFDH hasta la 8D07H\n//Tres parametros y Ocho datos del evento\n    msg.topic = \"LecturaPQA\";\n    flow.set(\"LecturaPQA\",msg.topic,\"memoryOnly\");\n    msg.payload = { 'fc': 3, \n                    'unitid': 5, \n                    'address': 36093, \n                    'quantity': 11\n    }\nreturn msg;",
         "outputs": 1,
@@ -1056,14 +1061,14 @@
         "y": 280,
         "wires": [
             [
-                "57288bdf6db2ed52"
+                "dda960f8729cd6eb"
             ]
         ]
     },
     {
-        "id": "cfb08aad22c0de19",
+        "id": "8810a33b12cc66b8",
         "type": "inject",
-        "z": "90f1b7d49e6c9117",
+        "z": "323bc1f107eef839",
         "name": "",
         "props": [
             {
@@ -1081,16 +1086,16 @@
         "y": 280,
         "wires": [
             [
-                "e3ab81d39a45df61"
+                "574de16ddb496b3a"
             ]
         ]
     },
     {
-        "id": "39272266cd26c05c",
+        "id": "19336663eb434a01",
         "type": "function",
-        "z": "90f1b7d49e6c9117",
+        "z": "323bc1f107eef839",
         "name": "EventosPQA",
-        "func": "var Lectura = flow.get(\"LecturaPQA\", \"memoryOnly\") || 0;\ncontext.set(\"Lectura\", Lectura, \"memoryOnly\");\n\nif (Lectura == \"LecturaPQA\") {\n//Adquisicion de los datos de un evento\nvar Uint8 = new Uint8Array(6);\nvar NewestEvent = msg.payload[0];\nvar StartingGroup = msg.payload[1];\nvar Timestamp1 = msg.payload[3];\nvar Timestamp2 = msg.payload[4];\nvar Timestamp3 = msg.payload[5];\nvar Timestamp4 = msg.payload[6];\nvar VSagVSwell = msg.payload[7];\nvar RatedValue = msg.payload[8];\nvar Threshold = msg.payload[9];\nvar HalfCycle = msg.payload[10];\n//Corrimiento de datos\nUint8[0] = Timestamp1;\nUint8[1] = Timestamp1 >> 8;\nUint8[2] = Timestamp2;\nUint8[3] = Timestamp2 >> 8;\nUint8[4] = Timestamp3;\nUint8[5] = Timestamp3 >> 8;\nvar year = Uint8[1] + 2000;\n\n//Guardar los eventos que llegan \n    var EventosPQA = flow.get(\"eventosPQA\") || []; //Arreglo para guardar los eventos\n    var flag;\n\n    for (let j = 1; j >= EventosPQA.length; j++) {\n        if (StartingGroup == EventosPQA[j]) {\n            flag = 0;\n            break;\n        } else {\n            flag = 1;\n        }\n    }\n    if (flag == 1) {\n        flow.set(\"EventosPQA\", EventosPQA, \"memoryOnly\"); //Guardar el evennto en el array de eventos \n    }\n\n\nvar dataEvento = [{ //Data del evento consultado \n    \"NewestEvent\": NewestEvent,\n    \"StartingGroup\": StartingGroup,\n    \"Fecha\": year + \"/\" + Uint8[0] + \"/\" + Uint8[3],\n    \"Hora\": Uint8[2] + \":\" + Uint8[5] + \":\" + Uint8[4],\n    \"Milisegundos\": Timestamp4,\n    \"VSagVSwell\": VSagVSwell,\n    \"RatedValue\": RatedValue,\n    \"Threshold\": Threshold,\n    \"HalfCycle\": HalfCycle\n}];\nflow.set(\"NewestEvent\", NewestEvent, \"memoryOnly\"); //Guarda el numero del ultimo evento \n\nreturn msg;\n\n}else {\n    node.status({ fill: \"red\", shape: \"ring\", text: \"No tiene nada\" });\n}\n\n\n",
+        "func": "var Lectura = flow.get(\"LecturaPQA\", \"memoryOnly\") || 0;\ncontext.set(\"Lectura\", Lectura, \"memoryOnly\");\n\n\n\nif (Lectura == \"LecturaPQA\") {\n    //Adquisicion de los datos de un evento\n    var Uint8 = new Uint8Array(6);\n    var NewestEvent = msg.payload[0];\n    var StartingGroup = msg.payload[1];\n    var Timestamp1 = msg.payload[3];\n    var Timestamp2 = msg.payload[4];\n    var Timestamp3 = msg.payload[5];\n    var Timestamp4 = msg.payload[6];\n    var VSagVSwell = msg.payload[7];\n    var RatedValue = msg.payload[8];\n    var Threshold = msg.payload[9];\n    var HalfCycle = msg.payload[10];\n    //Corrimiento de datos\n    Uint8[0] = Timestamp1;\n    Uint8[1] = Timestamp1 >> 8;\n    Uint8[2] = Timestamp2;\n    Uint8[3] = Timestamp2 >> 8;\n    Uint8[4] = Timestamp3;\n    Uint8[5] = Timestamp3 >> 8;\n    var year = Uint8[1] + 2000;\n\n    var dataEvento = { //Data del evento consultado  estructura\n        \"NewestEvent\": NewestEvent,\n        \"StartingGroup\": StartingGroup,\n        \"Fecha\": year + \"/\" + Uint8[0] + \"/\" + Uint8[3],\n        \"Hora\": Uint8[2] + \":\" + Uint8[5] + \":\" + Uint8[4],\n        \"Milisegundos\": Timestamp4,\n        \"VSagVSwell\": VSagVSwell,\n        \"RatedValue\": RatedValue,\n        \"Threshold\": Threshold,\n        \"HalfCycle\": HalfCycle\n    };\n    context.set(\"dataEvento\",dataEvento,\"memoryOnly\");\n    context.set(\"posActual\", dataEvento.StartingGroup,\"memoryOnly\");\n\n\n    //Guardar los eventos que llegan \n    var EventosPQA = flow.get(\"EventosPQA\") || []; //Arreglo para guardar los eventos\n    flow.set(\"NewestEvent\", NewestEvent, \"memoryOnly\"); //Guarda el numero del ultimo evento\n    var flag = 0;\n    var tamano = EventosPQA.length;\n    context.set(\"tamano\",tamano,\"memoryOnly\");\n    context.set(\"NewestEvent\", NewestEvent,\"memoryOnly\");\n    for (let j = 1; j <= NewestEvent; j++) {\n        node.status({fill:\"red\",shape:\"ring\",text:\"ingreso\"});\n        if (typeof EventosPQA[j].StartingGroup != 'undefined'){\n            if (dataEvento.StartingGroup == EventosPQA[j].StartingGroup) {\n                flag = 0;\n                break;\n            } else {\n                flag = 1;\n            }\n        }else{\n            //inicializacion\n            flag = 1;\n        }\n    }\n    context.set(\"flag\",flag,\"memoryOnly\");\n    if (flag == 1) {\n        EventosPQA.push(dataEvento);\n    }\n    flow.set(\"EventosPQA\", EventosPQA); //Guardar el evennto en el array de eventos \n    return msg;\n\n} else {\n    node.status({ fill: \"red\", shape: \"ring\", text: \"No tiene nada\" });\n}",
         "outputs": 1,
         "noerr": 0,
         "initialize": "",
@@ -1099,15 +1104,13 @@
         "x": 630,
         "y": 260,
         "wires": [
-            [
-                "1a9a71ad4aa1ddaa"
-            ]
+            []
         ]
     },
     {
-        "id": "681dc7052894e8de",
+        "id": "d43c5a09ed2a8750",
         "type": "inject",
-        "z": "90f1b7d49e6c9117",
+        "z": "323bc1f107eef839",
         "name": "",
         "props": [
             {
@@ -1125,14 +1128,14 @@
         "y": 380,
         "wires": [
             [
-                "dcda03d7160772b4"
+                "3d9fde251a4618e2"
             ]
         ]
     },
     {
-        "id": "dcda03d7160772b4",
+        "id": "3d9fde251a4618e2",
         "type": "function",
-        "z": "90f1b7d49e6c9117",
+        "z": "323bc1f107eef839",
         "name": "EscrituraPQA",
         "func": "var ultimoEvento = flow.get(\"NewestEvent\", \"memoryOnly\")||0; //Guarda el número del ultimo evento  \ncontext.set(\"ultimoEvento\",ultimoEvento, \"memoryOnly\");\nvar ctr = context.get(\"ctr\",\"memoryOnly\")||0;\n\n//Contador de eventos \nif (ctr < ultimoEvento) {\n    ctr = ctr + 1;\n} else {\n    ctr = 1;\n}\ncontext.set(\"ctr\", ctr, \"memoryOnly\"); \n\n//Lee la dirección del StartingGroup (8CFEH)\nmsg.payload = {\n    value: [ctr],\n    'fc': 16,\n    'unitid': 5,\n    'address': 36094,\n    'quantity': 1\n}\nreturn msg;",
         "outputs": 1,
@@ -1144,14 +1147,14 @@
         "y": 380,
         "wires": [
             [
-                "7fd28618af72ab3a"
+                "90c8b88f4408b2ad"
             ]
         ]
     },
     {
-        "id": "7fd28618af72ab3a",
+        "id": "90c8b88f4408b2ad",
         "type": "modbus-flex-write",
-        "z": "90f1b7d49e6c9117",
+        "z": "323bc1f107eef839",
         "name": "",
         "showStatusActivities": false,
         "showErrors": false,
@@ -1166,9 +1169,9 @@
         ]
     },
     {
-        "id": "1a9a71ad4aa1ddaa",
+        "id": "97809f0433d94650",
         "type": "ui_table",
-        "z": "90f1b7d49e6c9117",
+        "z": "323bc1f107eef839",
         "group": "0d982481b4c49ecd",
         "name": "",
         "order": 1,
@@ -1269,7 +1272,52 @@
         "outputs": 0,
         "cts": false,
         "x": 770,
-        "y": 260,
+        "y": 200,
         "wires": []
+    },
+    {
+        "id": "82518d17552eb4fa",
+        "type": "function",
+        "z": "323bc1f107eef839",
+        "name": "",
+        "func": "var EventosPQA = flow.get(\"EventosPQA\")||0;\nvar ctr = context.get(\"ctr\",\"memoryOnly\")||0;\nctr = ctr +1;\n\ncontext.set(\"ctr\",ctr,\"memoryOnly\");\nvar estado = EventosPQA[ctr].StartingGroup;\ncontext.set(\"estado\",estado,\"memoryOnly\");\ncontext.set(\"EventosPQA\", EventosPQA,\"memoryOnly\");\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 810,
+        "y": 380,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "c601a51daca75c07",
+        "type": "inject",
+        "z": "323bc1f107eef839",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "2",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payloadType": "date",
+        "x": 740,
+        "y": 340,
+        "wires": [
+            [
+                "82518d17552eb4fa"
+            ]
+        ]
     }
 ]
