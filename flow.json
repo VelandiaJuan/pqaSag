@@ -14,6 +14,13 @@
         "info": ""
     },
     {
+        "id": "873d7ea09f5f8d2d",
+        "type": "tab",
+        "label": "Flow 2",
+        "disabled": false,
+        "info": ""
+    },
+    {
         "id": "38b15402e5bf2d35",
         "type": "group",
         "z": "00a94a92b4a92fe9",
@@ -29,9 +36,7 @@
             "5ed1dc50b230c5fe"
         ],
         "x": -12,
-        "y": 13,
-        "w": 1464,
-        "h": 694
+        "y": 13
     },
     {
         "id": "abc2c8bc8582576b",
@@ -51,9 +56,7 @@
             "301535050dd7067c"
         ],
         "x": 54,
-        "y": 519,
-        "w": 412,
-        "h": 162
+        "y": 519
     },
     {
         "id": "85bfb7d199102d68",
@@ -91,9 +94,7 @@
             "5dcfb06cbde574fe"
         ],
         "x": 14,
-        "y": 39,
-        "w": 1412,
-        "h": 442
+        "y": 39
     },
     {
         "id": "ae58460d.12c698",
@@ -236,6 +237,26 @@
         "disp": true,
         "width": 13,
         "collapse": false
+    },
+    {
+        "id": "94e450d3bce1686e",
+        "type": "ui_group",
+        "name": "Trends",
+        "tab": "f946bef3fe503852",
+        "order": 1,
+        "disp": false,
+        "width": "12",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "f946bef3fe503852",
+        "type": "ui_tab",
+        "name": "Trends",
+        "icon": "fa-area-chart",
+        "order": 5,
+        "disabled": false,
+        "hidden": false
     },
     {
         "id": "1e10dc753c78a617",
@@ -415,7 +436,6 @@
         "id": "34c866df5cf67e31",
         "type": "inject",
         "z": "00a94a92b4a92fe9",
-        "d": true,
         "g": "85bfb7d199102d68",
         "name": "",
         "props": [
@@ -1037,11 +1057,11 @@
         "useIOForPayload": false,
         "emptyMsgOnFail": false,
         "keepMsgProperties": false,
-        "x": 450,
+        "x": 470,
         "y": 280,
         "wires": [
             [
-                "19336663eb434a01"
+                "293a6024e9c87686"
             ],
             []
         ]
@@ -1051,7 +1071,7 @@
         "type": "function",
         "z": "323bc1f107eef839",
         "name": "Lectura PQA",
-        "func": "//Lee desde la direcion 8CFDH hasta la 8D07H\n//Tres parametros y Ocho datos del evento\n    msg.topic = \"LecturaPQA\";\n    flow.set(\"LecturaPQA\",msg.topic,\"memoryOnly\");\n    msg.payload = { 'fc': 3, \n                    'unitid': 5, \n                    'address': 36093, \n                    'quantity': 11\n    }\nreturn msg;",
+        "func": "//Lee desde la direcion 8CFDH hasta la 8D07H\n//Tres parametros y Ocho datos del evento\nmsg.topic = \"LecturaPQA\";\n    msg.payload = { 'fc': 3, \n                    'unitid': 5, \n                    'address': 36093, \n                    'quantity': 11\n    }\nreturn msg;",
         "outputs": 1,
         "noerr": 0,
         "initialize": "",
@@ -1075,7 +1095,7 @@
                 "p": "payload"
             }
         ],
-        "repeat": "0.5",
+        "repeat": "2",
         "crontab": "",
         "once": false,
         "onceDelay": 0.1,
@@ -1095,41 +1115,16 @@
         "type": "function",
         "z": "323bc1f107eef839",
         "name": "EventosPQA",
-        "func": "var Lectura = flow.get(\"LecturaPQA\", \"memoryOnly\") || 0;\ncontext.set(\"Lectura\", Lectura, \"memoryOnly\");\n\n\n\nif (Lectura == \"LecturaPQA\") {\n    //Adquisicion de los datos de un evento\n    var Uint8 = new Uint8Array(6);\n    var NewestEvent = msg.payload[0];\n    var StartingGroup = msg.payload[1];\n    var Timestamp1 = msg.payload[3];\n    var Timestamp2 = msg.payload[4];\n    var Timestamp3 = msg.payload[5];\n    var Timestamp4 = msg.payload[6];\n    var VSagVSwell = msg.payload[7];\n    var RatedValue = msg.payload[8];\n    var Threshold = msg.payload[9];\n    var HalfCycle = msg.payload[10];\n    //Corrimiento de datos\n    Uint8[0] = Timestamp1;\n    Uint8[1] = Timestamp1 >> 8;\n    Uint8[2] = Timestamp2;\n    Uint8[3] = Timestamp2 >> 8;\n    Uint8[4] = Timestamp3;\n    Uint8[5] = Timestamp3 >> 8;\n    var year = Uint8[1] + 2000;\n\n    var dataEvento = { //Data del evento consultado  estructura\n        \"NewestEvent\": NewestEvent,\n        \"StartingGroup\": StartingGroup,\n        \"Fecha\": year + \"/\" + Uint8[0] + \"/\" + Uint8[3],\n        \"Hora\": Uint8[2] + \":\" + Uint8[5] + \":\" + Uint8[4],\n        \"Milisegundos\": Timestamp4,\n        \"VSagVSwell\": VSagVSwell,\n        \"RatedValue\": RatedValue,\n        \"Threshold\": Threshold,\n        \"HalfCycle\": HalfCycle\n    };\n    context.set(\"dataEvento\",dataEvento,\"memoryOnly\");\n    context.set(\"posActual\", dataEvento.StartingGroup,\"memoryOnly\");\n\n\n    //Guardar los eventos que llegan \n    var EventosPQA = flow.get(\"EventosPQA\") || []; //Arreglo para guardar los eventos\n    flow.set(\"NewestEvent\", NewestEvent, \"memoryOnly\"); //Guarda el numero del ultimo evento\n    var flag = 0;\n    var tamano = EventosPQA.length;\n    context.set(\"tamano\",tamano,\"memoryOnly\");\n    context.set(\"NewestEvent\", NewestEvent,\"memoryOnly\");\n    for (let j = 1; j <= NewestEvent; j++) {\n        node.status({fill:\"red\",shape:\"ring\",text:\"ingreso\"});\n        if (typeof EventosPQA[j].StartingGroup != 'undefined'){\n            if (dataEvento.StartingGroup == EventosPQA[j].StartingGroup) {\n                flag = 0;\n                break;\n            } else {\n                flag = 1;\n            }\n        }else{\n            //inicializacion\n            flag = 1;\n        }\n    }\n    context.set(\"flag\",flag,\"memoryOnly\");\n    if (flag == 1) {\n        EventosPQA.push(dataEvento);\n    }\n    flow.set(\"EventosPQA\", EventosPQA); //Guardar el evennto en el array de eventos \n    return msg;\n\n} else {\n    node.status({ fill: \"red\", shape: \"ring\", text: \"No tiene nada\" });\n}",
+        "func": "//Adquisicion de los datos de un evento\nvar Uint8 = new Uint8Array(6);\nvar NewestEvent = msg.payload[0];\nvar StartingGroup = msg.payload[1];\nvar Timestamp1 = msg.payload[3];\nvar Timestamp2 = msg.payload[4];\nvar Timestamp3 = msg.payload[5];\nvar Timestamp4 = msg.payload[6];\nvar VSagVSwell = msg.payload[7];\nvar RatedValue = msg.payload[8];\nvar Threshold = msg.payload[9];\nvar HalfCycle = msg.payload[10];\n//Corrimiento de datos\nUint8[0] = Timestamp1;\nUint8[1] = Timestamp1 >> 8;\nUint8[2] = Timestamp2;\nUint8[3] = Timestamp2 >> 8;\nUint8[4] = Timestamp3;\nUint8[5] = Timestamp3 >> 8;\nvar year = Uint8[1] + 2000;\n\n//Data del evento consultado - estructura\nvar dataEvento = { \n    \"NewestEvent\": NewestEvent,\n    \"StartingGroup\": StartingGroup,\n    \"Fecha\": year + \"/\" + Uint8[0] + \"/\" + Uint8[3],\n    \"Hora\": Uint8[2] + \":\" + Uint8[5] + \":\" + Uint8[4],\n    \"Milisegundos\": Timestamp4,\n    \"VSagVSwell\": VSagVSwell,\n    \"RatedValue\": RatedValue,\n    \"Threshold\": Threshold,\n    \"HalfCycle\": HalfCycle\n};\ncontext.set(\"dataEvento\",dataEvento,\"memoryOnly\");\n\n//Consultar los eventos \nvar Escritura = flow.get(\"Escritura\", \"memoryOnly\") || 0;\nvar m = context.get(\"m\", \"memoryOnly\") || 0;\ncontext.set(\"NewestEvent\", NewestEvent,\"memoryOnly\");\ncontext.set(\"Escritura\", Escritura,\"memoryOnly\");\nvar EventoGuardado = flow.get(\"EventoGuardado\", \"memoryOnly\") || [];\n\nif (Escritura != NewestEvent && Escritura != 1){  \n    m = m + 1;\n    Escritura = NewestEvent - m;\n    if (m > 0 && m <= 10){\n        // guardar el evento seleccionado\n       EventoGuardado.push(dataEvento);\n    } //flow.set(\"EventoGuardado\", EventoGuardado, \"memoryOnly\");\n} else {\n    m = 0;\n    Escritura = NewestEvent + 1;\n}\ncontext.set(\"m\",m,\"memoryOnly\");\nflow.set(\"EventoGuardado\", EventoGuardado, \"memoryOnly\");\n\nflow.set(\"Escritura\", Escritura, \"memoryOnly\"); //Guarda el numero del evento a consultar \n\nreturn msg;",
         "outputs": 1,
         "noerr": 0,
-        "initialize": "",
+        "initialize": "context.set(\"m\", 0, \"memoryOnly\");\n// Code added here will be run once\n// whenever the node is started.\n",
         "finalize": "",
         "libs": [],
-        "x": 630,
-        "y": 260,
+        "x": 790,
+        "y": 240,
         "wires": [
             []
-        ]
-    },
-    {
-        "id": "d43c5a09ed2a8750",
-        "type": "inject",
-        "z": "323bc1f107eef839",
-        "name": "",
-        "props": [
-            {
-                "p": "payload"
-            }
-        ],
-        "repeat": "1",
-        "crontab": "",
-        "once": false,
-        "onceDelay": 0.1,
-        "topic": "",
-        "payload": "true",
-        "payloadType": "bool",
-        "x": 170,
-        "y": 380,
-        "wires": [
-            [
-                "3d9fde251a4618e2"
-            ]
         ]
     },
     {
@@ -1137,7 +1132,7 @@
         "type": "function",
         "z": "323bc1f107eef839",
         "name": "EscrituraPQA",
-        "func": "var ultimoEvento = flow.get(\"NewestEvent\", \"memoryOnly\")||0; //Guarda el número del ultimo evento  \ncontext.set(\"ultimoEvento\",ultimoEvento, \"memoryOnly\");\nvar ctr = context.get(\"ctr\",\"memoryOnly\")||0;\n\n//Contador de eventos \nif (ctr < ultimoEvento) {\n    ctr = ctr + 1;\n} else {\n    ctr = 1;\n}\ncontext.set(\"ctr\", ctr, \"memoryOnly\"); \n\n//Lee la dirección del StartingGroup (8CFEH)\nmsg.payload = {\n    value: [ctr],\n    'fc': 16,\n    'unitid': 5,\n    'address': 36094,\n    'quantity': 1\n}\nreturn msg;",
+        "func": "var escribirEvento = flow.get(\"Escritura\", \"memoryOnly\")||0; //Guarda el número del evento más reciente\ncontext.set(\"escribirEvento\", escribirEvento, \"memoryOnly\");\n\n//Lee la dirección del StartingGroup (8CFEH)\n msg.payload = {\n     value: [escribirEvento],\n     'fc': 16,\n     'unitid': 5,\n     'address': 36094,\n     'quantity': 1\n }\nreturn msg;",
         "outputs": 1,
         "noerr": 0,
         "initialize": "",
@@ -1155,7 +1150,7 @@
         "id": "90c8b88f4408b2ad",
         "type": "modbus-flex-write",
         "z": "323bc1f107eef839",
-        "name": "",
+        "name": "PQA Modbus TCP",
         "showStatusActivities": false,
         "showErrors": false,
         "server": "ae58460d.12c698",
@@ -1169,131 +1164,137 @@
         ]
     },
     {
-        "id": "97809f0433d94650",
-        "type": "ui_table",
+        "id": "d43c5a09ed2a8750",
+        "type": "inject",
         "z": "323bc1f107eef839",
-        "group": "0d982481b4c49ecd",
         "name": "",
-        "order": 1,
-        "width": 13,
-        "height": 5,
-        "columns": [
+        "props": [
             {
-                "field": "NewestEvent",
-                "title": "No.",
-                "width": "",
-                "align": "left",
-                "formatter": "plaintext",
-                "formatterParams": {
-                    "target": "_blank"
-                }
-            },
-            {
-                "field": "StartingGroup",
-                "title": "StartingGroup",
-                "width": "10%",
-                "align": "left",
-                "formatter": "plaintext",
-                "formatterParams": {
-                    "target": "_blank"
-                }
-            },
-            {
-                "field": "Fecha",
-                "title": "Fecha",
-                "width": "",
-                "align": "left",
-                "formatter": "plaintext",
-                "formatterParams": {
-                    "target": "_blank"
-                }
-            },
-            {
-                "field": "Hora",
-                "title": "Hora",
-                "width": "",
-                "align": "left",
-                "formatter": "plaintext",
-                "formatterParams": {
-                    "target": "_blank"
-                }
-            },
-            {
-                "field": "Milisegundos",
-                "title": "Milisegundos",
-                "width": "",
-                "align": "left",
-                "formatter": "plaintext",
-                "formatterParams": {
-                    "target": "_blank"
-                }
-            },
-            {
-                "field": "VSagVSwell",
-                "title": "VSagVSwell",
-                "width": "",
-                "align": "left",
-                "formatter": "plaintext",
-                "formatterParams": {
-                    "target": "_blank"
-                }
-            },
-            {
-                "field": "RatedValue",
-                "title": "RatedValue",
-                "width": "",
-                "align": "left",
-                "formatter": "plaintext",
-                "formatterParams": {
-                    "target": "_blank"
-                }
-            },
-            {
-                "field": "Threshold",
-                "title": "Threshold",
-                "width": "",
-                "align": "left",
-                "formatter": "plaintext",
-                "formatterParams": {
-                    "target": "_blank"
-                }
-            },
-            {
-                "field": "HalfCycle",
-                "title": "HalfCycle",
-                "width": "",
-                "align": "left",
-                "formatter": "plaintext",
-                "formatterParams": {
-                    "target": "_blank"
-                }
+                "p": "payload"
             }
         ],
-        "outputs": 0,
-        "cts": false,
-        "x": 770,
-        "y": 200,
-        "wires": []
+        "repeat": "2",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "true",
+        "payloadType": "bool",
+        "x": 170,
+        "y": 380,
+        "wires": [
+            [
+                "3d9fde251a4618e2"
+            ]
+        ]
     },
     {
-        "id": "82518d17552eb4fa",
-        "type": "function",
+        "id": "293a6024e9c87686",
+        "type": "switch",
         "z": "323bc1f107eef839",
         "name": "",
-        "func": "var EventosPQA = flow.get(\"EventosPQA\")||0;\nvar ctr = context.get(\"ctr\",\"memoryOnly\")||0;\nctr = ctr +1;\n\ncontext.set(\"ctr\",ctr,\"memoryOnly\");\nvar estado = EventosPQA[ctr].StartingGroup;\ncontext.set(\"estado\",estado,\"memoryOnly\");\ncontext.set(\"EventosPQA\", EventosPQA,\"memoryOnly\");\nreturn msg;",
+        "property": "topic",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "eq",
+                "v": "LecturaPQA",
+                "vt": "str"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 1,
+        "x": 630,
+        "y": 240,
+        "wires": [
+            [
+                "19336663eb434a01"
+            ]
+        ]
+    },
+    {
+        "id": "6976fddb52483491",
+        "type": "function",
+        "z": "873d7ea09f5f8d2d",
+        "name": "",
+        "func": "var eventos = context.get(\"eventos\",\"memoryOnly\");\n\nreturn msg;",
         "outputs": 1,
         "noerr": 0,
-        "initialize": "",
+        "initialize": "var eventos = [{ \"NewestEvent\": 307, \"StartingGroup\": 4, \"Fecha\": \"2019/12/12\", \"Hora\": \"17:52:29\", \"Milisegundos\": 564, \"VSagVSwell\": 1, \"RatedValue\": 270, \"Threshold\": 80, \"HalfCycle\": 10 }, { \"NewestEvent\": 307, \"StartingGroup\": 4, \"Fecha\": \"2019/12/12\", \"Hora\": \"17:52:29\", \"Milisegundos\": 564, \"VSagVSwell\": 1, \"RatedValue\": 270, \"Threshold\": 80, \"HalfCycle\": 10 }, { \"NewestEvent\": 307, \"StartingGroup\": 4, \"Fecha\": \"2019/12/12\", \"Hora\": \"17:52:29\", \"Milisegundos\": 564, \"VSagVSwell\": 1, \"RatedValue\": 270, \"Threshold\": 80, \"HalfCycle\": 10 }, { \"NewestEvent\": 307, \"StartingGroup\": 4, \"Fecha\": \"2019/12/12\", \"Hora\": \"17:52:29\", \"Milisegundos\": 564, \"VSagVSwell\": 1, \"RatedValue\": 270, \"Threshold\": 80, \"HalfCycle\": 10 }, { \"NewestEvent\": 307, \"StartingGroup\": 4, \"Fecha\": \"2019/12/12\", \"Hora\": \"17:52:29\", \"Milisegundos\": 564, \"VSagVSwell\": 1, \"RatedValue\": 270, \"Threshold\": 80, \"HalfCycle\": 10 }, { \"NewestEvent\": 307, \"StartingGroup\": 303, \"Fecha\": \"2021/12/9\", \"Hora\": \"15:53:35\", \"Milisegundos\": 608, \"VSagVSwell\": 4, \"RatedValue\": 270, \"Threshold\": 80, \"HalfCycle\": 10 }, { \"NewestEvent\": 307, \"StartingGroup\": 303, \"Fecha\": \"2021/12/9\", \"Hora\": \"15:53:35\", \"Milisegundos\": 608, \"VSagVSwell\": 4, \"RatedValue\": 270, \"Threshold\": 80, \"HalfCycle\": 10 }, { \"NewestEvent\": 307, \"StartingGroup\": 303, \"Fecha\": \"2021/12/9\", \"Hora\": \"15:53:35\", \"Milisegundos\": 608, \"VSagVSwell\": 4, \"RatedValue\": 270, \"Threshold\": 80, \"HalfCycle\": 10 }, { \"NewestEvent\": 307, \"StartingGroup\": 303, \"Fecha\": \"2021/12/9\", \"Hora\": \"15:53:35\", \"Milisegundos\": 608, \"VSagVSwell\": 4, \"RatedValue\": 270, \"Threshold\": 80, \"HalfCycle\": 10 }, { \"NewestEvent\": 307, \"StartingGroup\": 299, \"Fecha\": \"2021/12/9\", \"Hora\": \"14:52:26\", \"Milisegundos\": 247, \"VSagVSwell\": 1, \"RatedValue\": 270, \"Threshold\": 80, \"HalfCycle\": 10 }]\ncontext.set(\"eventos\",eventos,\"memoryOnly\");\n// Code added here will be run once\n// whenever the node is started.\n",
         "finalize": "",
         "libs": [],
-        "x": 810,
-        "y": 380,
+        "x": 420,
+        "y": 280,
         "wires": [
             []
         ]
     },
     {
-        "id": "c601a51daca75c07",
+        "id": "c66aa01b7c369cbb",
+        "type": "inject",
+        "z": "873d7ea09f5f8d2d",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 290,
+        "y": 280,
+        "wires": [
+            [
+                "6976fddb52483491"
+            ]
+        ]
+    },
+    {
+        "id": "60fd23e5d4a03a35",
+        "type": "function",
+        "z": "323bc1f107eef839",
+        "name": "EventosPQA",
+        "func": "// //Adquisicion de los datos de un evento\n// var Uint8 = new Uint8Array(6);\n// var NewestEvent = msg.payload[0];\n// var StartingGroup = msg.payload[1];\n// var Timestamp1 = msg.payload[3];\n// var Timestamp2 = msg.payload[4];\n// var Timestamp3 = msg.payload[5];\n// var Timestamp4 = msg.payload[6];\n// var VSagVSwell = msg.payload[7];\n// var RatedValue = msg.payload[8];\n// var Threshold = msg.payload[9];\n// var HalfCycle = msg.payload[10];\n// //Corrimiento de datos\n// Uint8[0] = Timestamp1;\n// Uint8[1] = Timestamp1 >> 8;\n// Uint8[2] = Timestamp2;\n// Uint8[3] = Timestamp2 >> 8;\n// Uint8[4] = Timestamp3;\n// Uint8[5] = Timestamp3 >> 8;\n// var year = Uint8[1] + 2000;\n\n// //Data del evento consultado - estructura\n// var dataEvento = { \n//     \"NewestEvent\": NewestEvent,\n//     \"StartingGroup\": StartingGroup,\n//     \"Fecha\": year + \"/\" + Uint8[0] + \"/\" + Uint8[3],\n//     \"Hora\": Uint8[2] + \":\" + Uint8[5] + \":\" + Uint8[4],\n//     \"Milisegundos\": Timestamp4,\n//     \"VSagVSwell\": VSagVSwell,\n//     \"RatedValue\": RatedValue,\n//     \"Threshold\": Threshold,\n//     \"HalfCycle\": HalfCycle\n// };\n// context.set(\"dataEvento\",dataEvento,\"memoryOnly\");\n\n// //Consultar los eventos \n// var Escritura = flow.get(\"Escritura\", \"memoryOnly\") || 0;\n// var m = context.get(\"m\", \"memoryOnly\") || 0;\n// context.set(\"NewestEvent\", NewestEvent,\"memoryOnly\");\n// context.set(\"Escritura\", Escritura,\"memoryOnly\");\n// var EventoGuardado = flow.get(\"EventoGuardado\", \"memoryOnly\") || {};\n// var EventoG = flow.get(\"EventoGuardado\", \"memoryOnly\") || [];\n\n// if (Escritura != NewestEvent && Escritura != 1){  \n//     m = 1;\n//     m = m + 1;\n//     Escritura = NewestEvent - m;\n//     if (m > 0 && m <= 10){\n//         // guardar el evento seleccionado\n//         EventoGuardado =  Object.assign(dataEvento);\n//     } \n// } else {\n//     m = 0;\n//     Escritura = NewestEvent + 1;\n// }\n// context.set(\"m\",m,\"memoryOnly\");\n// context.set(\"EventoGuardado\", EventoGuardado, \"memoryOnly\");\n\n// flow.set(\"Escritura\", Escritura, \"memoryOnly\"); //Guarda el numero del evento a consultar \n\n// return msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1050,
+        "y": 440,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "c50102d446fec0a3",
+        "type": "function",
+        "z": "323bc1f107eef839",
+        "name": "",
+        "func": "// var target = { a: 1, b: 2 };\n// var source = { b: 4, c: 5 };\n// var x  = [1,2,3,4]\n// var y = x.push(\"1\");\n\n// var returnedTarget = Object.assign(target, source);\n// context.set(\"var\", returnedTarget)\n// context.set(\"y\", y)\n\n// Array.prototype.push.apply(x,2);\n// context.set(\"x\",x )\n// return msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 820,
+        "y": 420,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "8abdccdc7d1b8710",
         "type": "inject",
         "z": "323bc1f107eef839",
         "name": "",
@@ -1306,18 +1307,36 @@
                 "vt": "str"
             }
         ],
-        "repeat": "2",
+        "repeat": "",
         "crontab": "",
         "once": false,
         "onceDelay": 0.1,
         "topic": "",
+        "payload": "",
         "payloadType": "date",
-        "x": 740,
-        "y": 340,
+        "x": 830,
+        "y": 500,
         "wires": [
             [
-                "82518d17552eb4fa"
+                "c50102d446fec0a3"
             ]
+        ]
+    },
+    {
+        "id": "a020c00651fef5cc",
+        "type": "function",
+        "z": "323bc1f107eef839",
+        "name": "",
+        "func": "// //Adquisicion de los datos de un evento\n// var Uint8 = new Uint8Array(6);\n// var NewestEvent = msg.payload[0];\n// var StartingGroup = msg.payload[1];\n// var Timestamp1 = msg.payload[3];\n// var Timestamp2 = msg.payload[4];\n// var Timestamp3 = msg.payload[5];\n// var Timestamp4 = msg.payload[6];\n// var VSagVSwell = msg.payload[7];\n// var RatedValue = msg.payload[8];\n// var Threshold = msg.payload[9];\n// var HalfCycle = msg.payload[10];\n// //Corrimiento de datos\n// Uint8[0] = Timestamp1;\n// Uint8[1] = Timestamp1 >> 8;\n// Uint8[2] = Timestamp2;\n// Uint8[3] = Timestamp2 >> 8;\n// Uint8[4] = Timestamp3;\n// Uint8[5] = Timestamp3 >> 8;\n// var year = Uint8[1] + 2000;\n\n// //Data del evento consultado - estructura\n// var dataEvento = {\n//     \"NewestEvent\": NewestEvent,\n//     \"StartingGroup\": StartingGroup,\n//     \"Fecha\": year + \"/\" + Uint8[0] + \"/\" + Uint8[3],\n//     \"Hora\": Uint8[2] + \":\" + Uint8[5] + \":\" + Uint8[4],\n//     \"Milisegundos\": Timestamp4,\n//     \"VSagVSwell\": VSagVSwell,\n//     \"RatedValue\": RatedValue,\n//     \"Threshold\": Threshold,\n//     \"HalfCycle\": HalfCycle\n// };\n// context.set(\"dataEvento\", dataEvento, \"memoryOnly\");\n// var EventoGuardado = context.get(\"EventoGuardado\", \"memoryOnly\") || {};\n// var Escritura = flow.get(\"Escritura\",\"memoryOnly\");\n// Escritura = Escritura + 1;\n// EventoGuardado = Object.assign(dataEvento);\n// context.set(\"EventoGuardado\", EventoGuardado,\"memoryOnly\");\n// flow.set(\"Escritura\", Escritura, \"memoryOnly\"); //Guarda el numero del evento a consultar \n\n\n// return msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1040,
+        "y": 520,
+        "wires": [
+            []
         ]
     }
 ]
