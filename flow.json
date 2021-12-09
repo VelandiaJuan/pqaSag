@@ -36,7 +36,9 @@
             "5ed1dc50b230c5fe"
         ],
         "x": -12,
-        "y": 13
+        "y": 13,
+        "w": 1464,
+        "h": 694
     },
     {
         "id": "abc2c8bc8582576b",
@@ -56,7 +58,9 @@
             "301535050dd7067c"
         ],
         "x": 54,
-        "y": 519
+        "y": 519,
+        "w": 412,
+        "h": 162
     },
     {
         "id": "85bfb7d199102d68",
@@ -94,7 +98,9 @@
             "5dcfb06cbde574fe"
         ],
         "x": 14,
-        "y": 39
+        "y": 39,
+        "w": 1412,
+        "h": 442
     },
     {
         "id": "ae58460d.12c698",
@@ -1115,14 +1121,14 @@
         "type": "function",
         "z": "323bc1f107eef839",
         "name": "EventosPQA",
-        "func": "//Adquisicion de los datos de un evento\nvar Uint8 = new Uint8Array(6);\nvar NewestEvent = msg.payload[0];\nvar StartingGroup = msg.payload[1];\nvar Timestamp1 = msg.payload[3];\nvar Timestamp2 = msg.payload[4];\nvar Timestamp3 = msg.payload[5];\nvar Timestamp4 = msg.payload[6];\nvar VSagVSwell = msg.payload[7];\nvar RatedValue = msg.payload[8];\nvar Threshold = msg.payload[9];\nvar HalfCycle = msg.payload[10];\n//Corrimiento de datos\nUint8[0] = Timestamp1;\nUint8[1] = Timestamp1 >> 8;\nUint8[2] = Timestamp2;\nUint8[3] = Timestamp2 >> 8;\nUint8[4] = Timestamp3;\nUint8[5] = Timestamp3 >> 8;\nvar year = Uint8[1] + 2000;\n\n//Data del evento consultado - estructura\nvar dataEvento = { \n    \"NewestEvent\": NewestEvent,\n    \"StartingGroup\": StartingGroup,\n    \"Fecha\": year + \"/\" + Uint8[0] + \"/\" + Uint8[3],\n    \"Hora\": Uint8[2] + \":\" + Uint8[5] + \":\" + Uint8[4],\n    \"Milisegundos\": Timestamp4,\n    \"VSagVSwell\": VSagVSwell,\n    \"RatedValue\": RatedValue,\n    \"Threshold\": Threshold,\n    \"HalfCycle\": HalfCycle\n};\ncontext.set(\"dataEvento\",dataEvento,\"memoryOnly\");\n\n//Consultar los eventos \nvar Escritura = flow.get(\"Escritura\", \"memoryOnly\") || 0;\nvar m = context.get(\"m\", \"memoryOnly\") || 0;\ncontext.set(\"NewestEvent\", NewestEvent,\"memoryOnly\");\ncontext.set(\"Escritura\", Escritura,\"memoryOnly\");\nvar EventoGuardado = flow.get(\"EventoGuardado\", \"memoryOnly\") || [];\n\nif (Escritura != NewestEvent && Escritura != 1){  \n    m = m + 1;\n    Escritura = NewestEvent - m;\n    if (m > 0 && m <= 10){\n        // guardar el evento seleccionado\n       EventoGuardado.push(dataEvento);\n    } //flow.set(\"EventoGuardado\", EventoGuardado, \"memoryOnly\");\n} else {\n    m = 0;\n    Escritura = NewestEvent + 1;\n}\ncontext.set(\"m\",m,\"memoryOnly\");\nflow.set(\"EventoGuardado\", EventoGuardado, \"memoryOnly\");\n\nflow.set(\"Escritura\", Escritura, \"memoryOnly\"); //Guarda el numero del evento a consultar \n\nreturn msg;",
+        "func": "//Adquisicion de los datos de un evento\nvar Uint8 = new Uint8Array(6);\nvar NewestEvent = msg.payload[0];\nvar StartingGroup = msg.payload[1];\nvar Timestamp1 = msg.payload[3];\nvar Timestamp2 = msg.payload[4];\nvar Timestamp3 = msg.payload[5];\nvar Timestamp4 = msg.payload[6];\nvar VSagVSwell = msg.payload[7];\nvar RatedValue = msg.payload[8];\nvar Threshold = msg.payload[9];\nvar HalfCycle = msg.payload[10];\n//Corrimiento de datos\nUint8[0] = Timestamp1;\nUint8[1] = Timestamp1 >> 8;\nUint8[2] = Timestamp2;\nUint8[3] = Timestamp2 >> 8;\nUint8[4] = Timestamp3;\nUint8[5] = Timestamp3 >> 8;\nvar year = Uint8[1] + 2000;\n\n//Data del evento consultado - estructura\nvar dataEvento = { \n    \"NewestEvent\": NewestEvent,\n    \"StartingGroup\": StartingGroup,\n    \"Fecha\": year + \"/\" + Uint8[0] + \"/\" + Uint8[3],\n    \"Hora\": Uint8[2] + \":\" + Uint8[5] + \":\" + Uint8[4],\n    \"Milisegundos\": Timestamp4,\n    \"VSagVSwell\": VSagVSwell,\n    \"RatedValue\": RatedValue,\n    \"Threshold\": Threshold,\n    \"HalfCycle\": HalfCycle\n};\ncontext.set(\"dataEvento\",dataEvento,\"memoryOnly\");\n\n//Consultar los eventos \nvar Escritura = flow.get(\"Escritura\", \"memoryOnly\") || 0;\nvar m = context.get(\"m\", \"memoryOnly\") || 0;\ncontext.set(\"NewestEvent\", NewestEvent,\"memoryOnly\");\ncontext.set(\"Escritura\", Escritura,\"memoryOnly\");\nvar EventoGuardado = flow.get(\"EventoGuardado\", \"memoryOnly\") || [];\n\nif (Escritura != NewestEvent && Escritura != 1){  \n    m = m + 1;\n    Escritura = NewestEvent - m;\n    if (m > 0 && m <= 10){\n     // guardar el evento seleccionado\n        EventoGuardado[m] = dataEvento;\n        context.set(\"EventoGuardado\", EventoGuardado, \"memoryOnly\");\n        flow.set(\"EventoGuardado\", EventoGuardado, \"memoryOnly\");\n    } \n} else {\n    m = 0;\n    Escritura = NewestEvent + 1;\n}\ncontext.set(\"m\",m,\"memoryOnly\");\n//context.set(\"EventoGuardado\", EventoGuardado, \"memoryOnly\");\n\nflow.set(\"Escritura\", Escritura, \"memoryOnly\"); //Guarda el numero del evento a consultar \n\nreturn msg;",
         "outputs": 1,
         "noerr": 0,
-        "initialize": "context.set(\"m\", 0, \"memoryOnly\");\n// Code added here will be run once\n// whenever the node is started.\n",
+        "initialize": "context.set(\"m\", 0, \"memoryOnly\");\n//context.set(\"EventoGuardado\", [], \"memoryOnly\");\n\n// Code added here will be run once\n// whenever the node is started.\n",
         "finalize": "",
         "libs": [],
         "x": 790,
-        "y": 240,
+        "y": 200,
         "wires": [
             []
         ]
